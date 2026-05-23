@@ -31,12 +31,20 @@ function Stars({ rating = 0 }) {
   );
 }
 
+const TAG_COLORS = [
+  { bg: '#FFF3CD', text: '#8a5c00' },
+  { bg: '#D4EDDA', text: '#1a6632' },
+  { bg: '#D1ECF1', text: '#0c5460' },
+  { bg: '#F8D7DA', text: '#7a1f2e' },
+  { bg: '#E8D5F7', text: '#5a2080' },
+];
+
 const ProductCard = ({ product, onClick }) => {
   const [qty, setQty] = useState(1);
 
   if (!product) return null;
 
-  const { image, title, currentPrice, imageAlt, rating = 0, reviewCount = 0 } = product;
+  const { image, title, currentPrice, imageAlt, rating = 0, reviewCount = 0, tags = [] } = product;
 
   const priceFormatted = currentPrice
     ? `Rs. ${Number(currentPrice).toLocaleString('en-IN')}.00`
@@ -58,6 +66,23 @@ const ProductCard = ({ product, onClick }) => {
 
       <div className="pc-info">
         <h3 className="pc-title">{title}</h3>
+
+        {tags.length > 0 && (
+          <div className="pc-tags">
+            {tags.map((tag, i) => {
+              const c = TAG_COLORS[i % TAG_COLORS.length];
+              return (
+                <span
+                  key={tag}
+                  className="pc-tag"
+                  style={{ backgroundColor: c.bg, color: c.text }}
+                >
+                  {tag}
+                </span>
+              );
+            })}
+          </div>
+        )}
 
         {rating > 0 && (
           <div className="pc-rating-row">

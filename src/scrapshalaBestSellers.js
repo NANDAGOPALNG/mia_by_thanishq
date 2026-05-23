@@ -19,6 +19,7 @@ export const bestSellerProducts = [
     rating: 4.8,
     reviewCount: 124,
     badge: 'Best Seller',
+    tags: ['High Protein', 'Rich in Iron', 'Sprouted'],
   },
   {
     id: 2,
@@ -29,6 +30,7 @@ export const bestSellerProducts = [
     rating: 4.9,
     reviewCount: 89,
     badge: 'New',
+    tags: ['Vitamins A & D', 'Calcium', 'Organic'],
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export const bestSellerProducts = [
     rating: 4.7,
     reviewCount: 156,
     badge: 'Sale',
+    tags: ['High Fibre', 'Iron Fortified', 'No Sugar'],
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ export const bestSellerProducts = [
     rating: 4.8,
     reviewCount: 78,
     badge: 'Popular',
+    tags: ['Calcium Rich', 'Ragi Power', 'Gluten Free'],
   },
   {
     id: 5,
@@ -59,5 +63,6 @@ export const bestSellerProducts = [
     rating: 4.6,
     reviewCount: 92,
     badge: 'Best Seller',
+    tags: ['High Protein', 'Rich in Iron', 'Sprouted'],
   },
 ];
