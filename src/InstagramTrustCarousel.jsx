@@ -1,114 +1,88 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import instagramTrustReal from './assets/instagram-trust-real.jpg';
+import { useEffect, useMemo, useState } from 'react';
 
-const AMAZON_LOGO =
-  'https://static.vecteezy.com/system/resources/previews/014/018/561/non_2x/amazon-logo-on-transparent-background-free-vector.jpg';
-const NYKAA_LOGO =
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMZ4VQq3AUwc6kAUXJM6eg2QCxmocOhXMvQQ&s';
-
-const InstaRealIcon = () => (
-  <img
-    src={instagramTrustReal}
-    alt=""
-    width={16}
-    height={16}
-    className="h-4 w-4 shrink-0 rounded-[4px] object-cover"
-    loading="lazy"
-    decoding="async"
-  />
-);
+const AMAZON_LOGO = 'https://static.vecteezy.com/system/resources/previews/014/018/561/non_2x/amazon-logo-on-transparent-background-free-vector.jpg';
+const FLIPKART_LOGO = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxggIt5CPQqUxKi3eW4QhNIKv5eH5LdhRwMA&s';
 
 const StarRow = () => (
   <div className="flex items-center gap-0.5">
-    {[1, 2, 3, 4, 5].map((i) => (
-      <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#FF9500">
+    {[1,2,3,4,5].map((i) => (
+      <svg key={i} width="11" height="11" viewBox="0 0 24 24" fill="#F5A900">
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
     ))}
   </div>
 );
 
-const ComfortIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="#DB2A20" aria-hidden>
-    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6 4 4 6.5 4c1.74 0 3.41 1.01 4.22 2.44C11.09 5.01 12.76 4 14.5 4 17 4 19 6 19 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+const LeafIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="#16a34a" aria-hidden>
+    <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 008 20C19 20 22 3 22 3c-1 2-8 2-8 2" />
   </svg>
 );
 
 function RatingBadge({ value }) {
   return (
-    <div
-      className="flex items-center gap-1 px-2 py-0.5 rounded-md shrink-0"
-      style={{ backgroundColor: '#DB2A20' }}
-    >
-      <svg width="10" height="10" viewBox="0 0 24 24" fill="#FFEA00" aria-hidden>
+    <div className="flex items-center gap-1 px-2 py-0.5 rounded-md shrink-0" style={{ backgroundColor: '#F5A900' }}>
+      <svg width="10" height="10" viewBox="0 0 24 24" fill="#fff" aria-hidden>
         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
       </svg>
-      <span className="font-bold text-white" style={{ fontSize: '11px' }}>
-        {value}
-      </span>
+      <span className="font-bold text-white" style={{ fontSize: '11px' }}>{value}</span>
     </div>
   );
 }
 
-/**
- * Single rotated trust strip — exactly 5 slides: 10K+ / Instagram / Amazon / Nykaa / comfort.
- */
 export default function InstagramTrustCarousel({
-  instagramUrl,
-  followersLabel = '522K',
-  shopUrl = 'https://www.instagram.com/saadaadesigns/',
-  amazonUrl = 'https://www.amazon.in/s?k=Muun+Home+Decor',
-  nykaaUrl = 'https://www.nykaa.com/',
+  instagramUrl = 'https://www.instagram.com/mammamills/',
+  followersLabel = '50K',
+  shopUrl = 'https://mammamills.com/',
+  amazonUrl = 'https://www.amazon.in/',
+  flipkartUrl = 'https://www.flipkart.com/',
 }) {
-  const trustSlides = useMemo(
-    () => [
-      {
-        key: 'trusted',
-        href: shopUrl,
-        ariaLabel: 'Trusted customers — visit Saadaa',
-        icon: <StarRow />,
-        text: 'Trusted by 10,000+ Customers',
-        badge: null,
-      },
-      {
-        key: 'instagram',
-        href: instagramUrl,
-        ariaLabel: 'Saadaa on Instagram',
-        icon: <InstaRealIcon />,
-        text: `${followersLabel}+ followers · @saadaadesigns`,
-        badge: null,
-      },
-      {
-        key: 'amazon',
-        href: amazonUrl,
-        ariaLabel: 'Saadaa on Amazon India',
-        icon: (
-          <img src={AMAZON_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
-        ),
-        text: '980+ ratings · Amazon India',
-        badge: '4.5',
-      },
-      {
-        key: 'nykaa',
-        href: nykaaUrl,
-        ariaLabel: 'Saadaa on Nykaa',
-        icon: (
-          <img src={NYKAA_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />
-        ),
-        text: '900+ reviews · Nykaa',
-        badge: '4.6',
-      },
-      {
-        key: 'comfort',
-        href: shopUrl,
-        ariaLabel: 'Fine decor — Saadaa',
-        icon: <ComfortIcon />,
-        text: 'Eco-conscious craft · Handmade in India',
-        badge: null,
-      },
-    ],
-    [followersLabel, instagramUrl, shopUrl, amazonUrl, nykaaUrl]
-  );
+  const trustSlides = useMemo(() => [
+    {
+      key: 'trusted',
+      href: shopUrl,
+      ariaLabel: 'Trusted by parents — Mamma Mills',
+      icon: <StarRow />,
+      text: 'Trusted by 10,000+ Parents',
+      badge: null,
+    },
+    {
+      key: 'instagram',
+      href: instagramUrl,
+      ariaLabel: 'Mamma Mills on Instagram',
+      icon: (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1306C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4.5" /><circle cx="17.5" cy="6.5" r="1" fill="#E1306C" stroke="none" />
+        </svg>
+      ),
+      text: `${followersLabel}+ followers · @mammamills`,
+      badge: null,
+    },
+    {
+      key: 'amazon',
+      href: amazonUrl,
+      ariaLabel: 'Mamma Mills on Amazon India',
+      icon: <img src={AMAZON_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />,
+      text: '480+ ratings · Amazon India',
+      badge: '4.5',
+    },
+    {
+      key: 'flipkart',
+      href: flipkartUrl,
+      ariaLabel: 'Mamma Mills on Flipkart',
+      icon: <img src={FLIPKART_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />,
+      text: '320+ reviews · Flipkart',
+      badge: '4.4',
+    },
+    {
+      key: 'organic',
+      href: shopUrl,
+      ariaLabel: 'Organic sprouted baby food — Mamma Mills',
+      icon: <LeafIcon />,
+      text: 'Organic · Sprouted · FSSAI Certified',
+      badge: null,
+    },
+  ], [followersLabel, instagramUrl, shopUrl, amazonUrl, flipkartUrl]);
 
   const [trustIdx, setTrustIdx] = useState(0);
   const [animKey, setAnimKey] = useState(0);
@@ -124,23 +98,15 @@ export default function InstagramTrustCarousel({
 
   const slide = trustSlides[trustIdx];
 
-  const row = (
-    <>
-      <span className="shrink-0 flex items-center">{slide.icon}</span>
-      <span className="text-xs font-semibold text-gray-900">{slide.text}</span>
-      {slide.badge ? <RatingBadge value={slide.badge} /> : null}
-    </>
-  );
-
   return (
     <>
       <style>{`
-        @keyframes instaTrustSlideIn {
+        @keyframes mammasTrustSlideIn {
           0%   { transform: translateX(-100%); opacity: 0; }
           100% { transform: translateX(0);     opacity: 1; }
         }
-        .insta-trust-slide {
-          animation: instaTrustSlideIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+        .mammas-trust-slide {
+          animation: mammasTrustSlideIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
         }
       `}</style>
       <div
@@ -160,10 +126,12 @@ export default function InstagramTrustCarousel({
           href={slide.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="insta-trust-slide flex items-center gap-2 whitespace-nowrap h-full text-inherit no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-[#DB2A20] focus-visible:ring-offset-1 rounded"
+          className="mammas-trust-slide flex items-center gap-2 whitespace-nowrap h-full text-inherit no-underline focus:outline-none"
           aria-label={slide.ariaLabel}
         >
-          {row}
+          <span className="shrink-0 flex items-center">{slide.icon}</span>
+          <span className="text-xs font-semibold text-gray-900">{slide.text}</span>
+          {slide.badge ? <RatingBadge value={slide.badge} /> : null}
         </a>
       </div>
     </>

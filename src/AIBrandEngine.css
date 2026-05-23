@@ -1,10 +1,10 @@
 /* AI Brand Engine — Muun Home Decor (reference layout: pill trigger, panel, tabs, chart) */
 
 :root {
-  --abe-accent: #b99b7b;
-  --abe-accent-mid: #c9aa8f;
-  --abe-accent-deep: #8a7260;
-  --abe-gold: #c9a227;
+  --abe-accent: #F5A900;
+  --abe-accent-mid: #FBBF24;
+  --abe-accent-deep: #D97706;
+  --abe-gold: #F5A900;
   --abe-border: #e8eaed;
   --abe-muted: #666;
 }

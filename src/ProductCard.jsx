@@ -1,18 +1,18 @@
-import React, { useId } from 'react';
+import { useState } from 'react';
 import './ProductCard.css';
+import MarketplaceBadgeRotator from './MarketplaceBadgeRotator';
 
 const STAR_PATH = "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z";
 
-function StarRow({ rating = 0 }) {
-  const uid = useId().replace(/:/g, '');
+function Stars({ rating = 0 }) {
   return (
-    <span className="pc-stars" aria-label={`${rating} out of 5 stars`}>
+    <span className="pc-stars" aria-label={`${rating} out of 5`}>
       {[1, 2, 3, 4, 5].map((i) => {
-        const full = i <= Math.floor(rating);
-        const half = !full && i === Math.ceil(rating) && (rating % 1) >= 0.25;
-        const clipId = `${uid}-h${i}`;
+        const filled = i <= Math.floor(rating);
+        const half = !filled && i === Math.ceil(rating) && (rating % 1) >= 0.25;
+        const clipId = `clip-${i}-${rating}`;
         return (
-          <svg key={i} className="pc-star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg key={i} className="pc-star-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             {half && (
               <defs>
                 <clipPath id={clipId}>
@@ -20,9 +20,9 @@ function StarRow({ rating = 0 }) {
                 </clipPath>
               </defs>
             )}
-            <path d={STAR_PATH} fill="#d1d5db" />
-            {(full || half) && (
-              <path d={STAR_PATH} fill="#fb923c" clipPath={half ? `url(#${clipId})` : undefined} />
+            <path d={STAR_PATH} fill="#e0e0e0" />
+            {(filled || half) && (
+              <path d={STAR_PATH} fill="#F5A900" clipPath={half ? `url(#${clipId})` : undefined} />
             )}
           </svg>
         );
@@ -32,67 +32,56 @@ function StarRow({ rating = 0 }) {
 }
 
 const ProductCard = ({ product, onClick }) => {
+  const [qty, setQty] = useState(1);
 
   if (!product) return null;
 
-  const {
-    image,
-    title,
-    currentPrice,
-    originalPrice,
-    rating = 0,
-    reviewCount = 0,
-    handle,
-    imageAlt,
-  } = product;
-
-  const productPath = handle
-    ? `/products/${handle.replace(/^\//, '')}`
-    : '#';
-
-  const src720 = image || '';
-  const src360 = image || '';
-
-  const onNavigate = (e) => {
-    if (onClick) {
-      e.preventDefault();
-      onClick(e);
-    } else if (productPath === '#') {
-      e.preventDefault();
-    }
-  };
+  const { image, title, currentPrice, imageAlt, rating = 0, reviewCount = 0 } = product;
 
   const priceFormatted = currentPrice
-    ? `From Rs. ${Number(currentPrice).toLocaleString('en-IN')}.00`
-    : '';
+    ? `Rs. ${Number(currentPrice).toLocaleString('en-IN')}.00`
+    : 'Rs. 299.00';
 
   return (
-    <div className="pc-card" onClick={onNavigate}>
-      {/* Image area */}
-      <div className="pc-img-wrap">
+    <div className="pc-card">
+      <div className="pc-img-wrap" onClick={onClick} style={{ cursor: onClick ? 'pointer' : 'default' }}>
         <img
-          src={src720 || image}
+          src={image}
           alt={imageAlt || title}
-          srcSet={image ? `${src360} 360w, ${src720} 720w` : undefined}
-          sizes="(max-width: 768px) 90vw, 300px"
-          width={400}
-          height={400}
-          loading="lazy"
           className="pc-img"
+          loading="lazy"
         />
-        {rating > 0 && (
-          <div className="pc-rating-overlay">
-            <svg className="pc-star-single" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d={STAR_PATH} fill="#fb923c" />
-            </svg>
-            <span className="pc-rating-value">{rating}</span>
-          </div>
-        )}
+        <div className="pc-img-market-overlay">
+          <MarketplaceBadgeRotator />
+        </div>
       </div>
 
-      {/* Info area */}
       <div className="pc-info">
         <h3 className="pc-title">{title}</h3>
+
+        {rating > 0 && (
+          <div className="pc-rating-row">
+            <Stars rating={rating} />
+            <span className="pc-review-count">({reviewCount})</span>
+          </div>
+        )}
+
+        <p className="pc-price">{priceFormatted}</p>
+
+        <div className="pc-actions">
+          <div className="pc-qty">
+            <button className="pc-qty-btn" onClick={() => setQty(q => Math.max(1, q - 1))}>−</button>
+            <span className="pc-qty-val">{qty}</span>
+            <button className="pc-qty-btn" onClick={() => setQty(q => q + 1)}>+</button>
+          </div>
+
+          <button className="pc-add-to-cart">
+            Add to cart
+            <span className="pc-cart-plus">+</span>
+          </button>
+        </div>
+
+        <button className="pc-buy-now">Buy it now</button>
       </div>
     </div>
   );

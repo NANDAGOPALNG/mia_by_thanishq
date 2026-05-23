@@ -1,10 +1,9 @@
-import React, { useId, useState } from 'react';
+import { useId, useState } from 'react';
 import './AIBrandEngine.css';
 
-const SHOP_URL = 'https://www.instagram.com/saadaadesigns/';
-const INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
+const SHOP_URL = 'https://mammamills.com/';
+const INSTAGRAM_URL = 'https://www.instagram.com/mammamills/';
 
-/** Sparkle mark — Saadaa accent */
 function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   return (
     <svg
@@ -20,9 +19,9 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
     >
       <defs>
         <linearGradient id={gradientId} x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#c9aa8f" />
-          <stop offset="0.45" stopColor="#B99B7B" />
-          <stop offset="1" stopColor="#8a7260" />
+          <stop stopColor="#FBBF24" />
+          <stop offset="0.45" stopColor="#F5A900" />
+          <stop offset="1" stopColor="#D97706" />
         </linearGradient>
       </defs>
       <path
@@ -41,50 +40,32 @@ function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
 function AIBrandEngine({ showExtras = true, compact = false }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [activeTab, setActiveTab] = useState('metrics');
-  const [activeMetric, setActiveMetric] = useState('fit');
+  const [activeMetric, setActiveMetric] = useState('satisfaction');
   const baseId = useId().replace(/:/g, '');
 
   if (!showExtras) return null;
 
   const getIcon = (type) => {
     const icons = {
-      craft: (
+      ingredients: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
-      occasions: (
+      stages: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
           <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
       ),
-      returns: (
+      gifting: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M3 9L9 3L15 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M9 3V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M21 15L15 21L9 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M20 12V20H4V12M2 7H22V12H2V7ZM12 7V20M12 7H7.5C6.12 7 5 5.88 5 4.5C5 3.12 6.12 2 7.5 2C10.5 2 12 7 12 7ZM12 7H16.5C17.88 7 19 5.88 19 4.5C19 3.12 17.88 2 16.5 2C13.5 2 12 7 12 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
-      care: (
+      preparation: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 3L4 7V11C4 16.55 7.16 21.74 12 23C16.84 21.74 20 16.55 20 11V7L12 3Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d="M12 3L4 7V11C4 16.55 7.16 21.74 12 23C16.84 21.74 20 16.55 20 11V7L12 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
       shipping: (
@@ -96,32 +77,14 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
       ),
       brand: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
           <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      ),
-      gift: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M20 12V20H4V12M2 7H22V12H2V7ZM12 7V20M12 7H7.5C6.12 7 5 5.88 5 4.5C5 3.12 6.12 2 7.5 2C10.5 2 12 7 12 7ZM12 7H16.5C17.88 7 19 5.88 19 4.5C19 3.12 17.88 2 16.5 2C13.5 2 12 7 12 7Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
         </svg>
       ),
       metrics: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M3 3V21H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M21 10V3H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       ),
     };
@@ -129,108 +92,108 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
   };
 
   const brandInfo = {
-    craft: {
-      title: 'Saadaa craftsmanship',
-      iconType: 'craft',
+    ingredients: {
+      title: 'Clean ingredients',
+      iconType: 'ingredients',
       content: [
         {
-          label: 'Fabric quality',
-          value: 'Airy linen & cotton',
-          description: 'Breathable natural fabrics sourced for comfort in the Indian climate — soft from day one.',
+          label: 'Sprouted grains',
+          value: '100% organic',
+          description: 'Sprouting breaks down phytic acid, improving nutrient absorption and making digestion easier for babies.',
         },
         {
-          label: 'Stitching',
-          value: 'Clean & precise',
-          description: 'Even seams, no loose threads, and reinforced stress points for long-lasting everyday wear.',
+          label: 'Dairy-free & vegan',
+          value: 'No hidden allergens',
+          description: 'Formulated without milk solids, making it suitable for babies with dairy sensitivity.',
         },
         {
-          label: 'Finish',
-          value: 'True to colour',
-          description: 'Colours stay consistent wash after wash — what you see online is what you receive.',
+          label: 'No additives',
+          value: 'Zero preservatives',
+          description: 'No added sugar, no artificial flavours, no preservatives — just real food for real little ones.',
         },
       ],
       highlights: [
-        'Every piece passes a quality check before leaving the studio.',
-        'Natural fabrics that soften with every wash and get better over time.',
-        'Minimalist cuts that hold their shape without structure or padding.',
+        'Every batch is made with traceable, organic ingredients.',
+        'Sprouting increases iron, calcium, and fibre bioavailability naturally.',
+        'Approved by paediatricians for babies from 6 months onwards.',
       ],
     },
-    occasions: {
-      title: 'Wear it everywhere',
-      iconType: 'occasions',
+    stages: {
+      title: 'Feeding stages',
+      iconType: 'stages',
       content: [
         {
-          label: 'Daily wear',
-          value: 'Office to errands',
-          description: 'Clean, simple silhouettes that look polished without trying — from desk to market.',
+          label: '6–8 months',
+          value: 'First solids',
+          description: 'Smooth porridge consistency — ideal for babies just starting their weaning journey.',
         },
         {
-          label: 'Weekend',
-          value: 'Relaxed & fresh',
-          description: 'Lightweight linen and cotton keep you comfortable through long weekend days.',
+          label: '9–12 months',
+          value: 'Growing appetite',
+          description: 'Thicker texture supports developing chewing skills and growing nutritional needs.',
         },
         {
-          label: 'Occasions',
-          value: 'Casual to festive',
-          description: 'Elevate with accessories — Saadaa basics work as a base for any occasion.',
+          label: '12–24 months',
+          value: 'Toddler staple',
+          description: 'High protein and iron content supports active toddlers through the day.',
         },
       ],
       highlights: [
-        'Designed for real days — not just photoshoots.',
-        'Versatile enough to pair with everything already in your wardrobe.',
-        'Breathable fabric keeps you cool through India\'s warm seasons.',
+        'One product that works across the full 6–24 month weaning window.',
+        'Texture can be adjusted by adding more or less water to suit your baby\'s stage.',
+        'Consistent nutrition that grows with your baby\'s changing needs.',
       ],
     },
     gifting: {
-      title: 'Gift a Saadaa basic',
-      iconType: 'gift',
+      title: 'Gift for new mums',
+      iconType: 'gifting',
       content: [
         {
-          label: 'Who it is for',
-          value: 'Her · anyone',
-          description: 'Sister, friend, mum, colleague — a piece she\'ll actually reach for every week.',
+          label: 'Who it\'s for',
+          value: 'New & expecting mums',
+          description: 'A thoughtful, practical gift for any mum starting or continuing the weaning journey.',
         },
         {
           label: 'Occasions',
-          value: 'Any milestone',
-          description: 'Birthdays, Diwali, rakhi, graduations — a wardrobe basic is a gift that gets used daily.',
+          value: 'Baby shower & more',
+          description: 'Baby showers, naming ceremonies, or just a caring gesture — Mamma Mills is always welcome.',
         },
         {
           label: 'Presentation',
           value: 'Clean packaging',
-          description: 'Arrives neatly packaged and ready to gift — no extra effort needed.',
+          description: 'Arrives securely sealed and neatly packaged — ready to gift without extra wrapping.',
         },
       ],
       highlights: [
-        'Recipients love that it fits straight away — size chart is accurate.',
-        'Simple enough to suit any style, special enough to feel considered.',
-        'Available in classic colours that work for every skin tone.',
+        'Mums love receiving something that is actually useful and healthy.',
+        'Paediatrician-friendly ingredient list — no guilt, no guessing.',
+        'A brand trusted by thousands of Indian families.',
       ],
     },
-    care: {
-      title: 'Care for your Saadaa clothing',
-      iconType: 'care',
+    preparation: {
+      title: 'How to prepare',
+      iconType: 'preparation',
       content: [
         {
-          label: 'Washing',
-          value: 'Machine washable',
-          description: 'Wash in cold water on a gentle cycle. Turn inside out to preserve colour and texture.',
+          label: 'Cook time',
+          value: 'Under 2 minutes',
+          description: 'Add 2–3 tablespoons of powder to warm water or breast milk, stir well, and serve.',
         },
         {
-          label: 'Drying',
-          value: 'Shade dry',
-          description: 'Dry in shade to prevent fading. Linen and cotton dry quickly without a dryer.',
+          label: 'Consistency',
+          value: 'Adjustable',
+          description: 'Add more liquid for a thinner porridge (early stages) or less for a thicker feed (older babies).',
         },
         {
-          label: 'Ironing',
-          value: 'Low heat',
-          description: 'Iron on low-medium heat while slightly damp for a crisp finish. Avoid high heat on linen.',
+          label: 'Storage',
+          value: 'Cool & dry place',
+          description: 'Once opened, store in an airtight container away from moisture. Use within 30 days of opening.',
         },
       ],
       highlights: [
-        'Linen softens naturally with every wash — gets better over time.',
-        'No dry cleaning needed. Simple machine wash is all it takes.',
-        'Store folded in a cool, dry place to maintain shape.',
+        'No cooking on the stove needed — just warm water and stir.',
+        'Can be mixed with breast milk or formula for added nutrition.',
+        'Ideal for travel — lightweight, compact, and easy to prepare anywhere.',
       ],
     },
     shipping: {
@@ -245,88 +208,88 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
         {
           label: 'COD available',
           value: 'Pay on delivery',
-          description: 'Cash on delivery available at checkout. No advance payment required for eligible pincodes.',
+          description: 'Cash on delivery available at checkout for eligible pincodes across India.',
         },
         {
           label: '7-day returns',
           value: 'Easy returns',
-          description: 'Not what you expected? Raise a return within 7 days. Check policy page for full eligibility details.',
+          description: 'Not satisfied? Raise a return within 7 days of delivery. Check policy page for full details.',
         },
       ],
       highlights: [
-        'Pieces are packed with protective padding — no dents or deformation on arrival.',
-        'Protective corners and surfaces are checked before dispatch.',
-        'Free or promotional shipping often available — check cart for current offers.',
+        'Orders are sealed and packed to preserve freshness during transit.',
+        'Free shipping available on orders above a minimum value — check cart for current offer.',
+        'Dispatch within 1–2 business days of order confirmation.',
       ],
     },
     brand: {
-      title: 'Saadaa',
+      title: 'Mamma Mills',
       iconType: 'brand',
       content: [
         {
           label: 'Brand promise',
-          value: 'Better basics for everyone',
-          description: 'Simple, quality clothing designed for real everyday life — comfortable, clean, and made to last.',
+          value: 'Not just food, it is nutrition',
+          description: 'Mamma Mills exists to make every baby\'s first food honest, organic, and truly nourishing.',
         },
         {
-          label: 'Shop',
-          value: 'saadaadesigns',
-          description: 'Linen kurtas, cotton pants, and everyday basics — crafted for women who value simplicity and quality.',
+          label: 'Products',
+          value: 'Sprouted baby foods',
+          description: 'Channa & Dalia, Ragi Idli Mix, and more — all crafted for babies aged 6 to 24 months.',
         },
         {
           label: 'Community',
-          value: '@saadaadesigns · 522K',
-          description: 'Styling reels, real customer stories, and new drops on Instagram.',
+          value: '@mammamills',
+          description: 'Weaning tips, real mum stories, and new product drops on Instagram.',
         },
       ],
       highlights: [
-        'Trusted by thousands of customers for breathable, honest everyday wear.',
-        'Minimalist designs that work for office, errands, and everything in between.',
-        'Linen and cotton fabrics chosen for comfort in the Indian climate.',
+        'Trusted by thousands of Indian families for clean, sprouted baby nutrition.',
+        'FSSAI certified and paediatrician recommended.',
+        'A brand built by mums, for mums — food with a soul, crafted with purpose.',
       ],
     },
   };
 
   const graphData = {
-    fit: {
-      label: 'Everyday styling comfort',
-      data: [85, 88, 86, 90, 87, 91, 93],
-      color: '#B99B7B',
+    satisfaction: {
+      label: 'Parent satisfaction',
+      data: [82, 85, 87, 89, 90, 92, 94],
+      color: '#F5A900',
     },
-    positive: {
-      label: 'Quality satisfaction',
-      data: [78, 82, 84, 87, 85, 88, 91],
-      color: '#c9aa8f',
+    nutrition: {
+      label: 'Nutritional trust',
+      data: [78, 81, 84, 86, 88, 90, 93],
+      color: '#FBBF24',
     },
     repeat: {
       label: 'Repeat purchases',
-      data: [62, 65, 68, 70, 72, 75, 79],
-      color: '#a68b70',
+      data: [65, 68, 72, 75, 78, 81, 85],
+      color: '#D97706',
     },
     delivery: {
       label: 'Delivery experience',
-      data: [86, 88, 89, 91, 90, 92, 94],
-      color: '#8a7260',
+      data: [85, 87, 89, 90, 91, 93, 95],
+      color: '#F59E0B',
     },
     rating: {
       label: 'Avg. rating',
-      data: [4.3, 4.4, 4.5, 4.6, 4.6, 4.7, 4.8],
-      color: '#c9aa8f',
+      data: [4.4, 4.5, 4.6, 4.6, 4.7, 4.8, 4.8],
+      color: '#F5A900',
     },
-    issue: {
+    support: {
       label: 'Post-purchase support',
-      data: [80, 82, 85, 87, 88, 90, 92],
-      color: '#B99B7B',
+      data: [80, 83, 85, 87, 89, 91, 93],
+      color: '#D97706',
     },
   };
 
   const metrics = [
-    { id: 'positive', label: 'Quality' },
+    { id: 'satisfaction', label: 'Happy' },
+    { id: 'nutrition', label: 'Nutrition' },
     { id: 'repeat', label: 'Repeat' },
-    { id: 'fit', label: 'Style' },
     { id: 'delivery', label: 'Ship' },
     { id: 'rating', label: 'Stars' },
-    { id: 'issue', label: 'Support' },
+    { id: 'support', label: 'Support' },
   ];
 
   const currentMetric = graphData[activeMetric];
@@ -362,7 +325,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
     return (
       <div className="chart-container">
         <div className="chart-header">
-          <h5 className="chart-title">Saadaa customer trust snapshot</h5>
+          <h5 className="chart-title">Mamma Mills customer trust snapshot</h5>
           <div className="chart-value">{displayValue}</div>
         </div>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} className="chart-svg" preserveAspectRatio="xMidYMid meet">
@@ -376,40 +339,16 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           {[0, 1, 2, 3, 4].map((i) => {
             const y = padding.top + (i / 4) * (height - padding.top - padding.bottom);
             return (
-              <line
-                key={i}
-                x1={padding.left}
-                y1={y}
-                x2={width - padding.right}
-                y2={y}
-                stroke="#e8eaed"
-                strokeWidth="1"
-                strokeDasharray="2,2"
-              />
+              <line key={i} x1={padding.left} y1={y} x2={width - padding.right} y2={y} stroke="#e8eaed" strokeWidth="1" strokeDasharray="2,2" />
             );
           })}
-          <path
-            d={linePath}
-            fill="none"
-            stroke={currentMetric.color}
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <path d={linePath} fill="none" stroke={currentMetric.color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           {points.map((point, index) => (
             <circle key={index} cx={point.x} cy={point.y} r="4" fill={currentMetric.color} stroke="white" strokeWidth="2" />
           ))}
           {points.map((point, index) => (
-            <text
-              key={`lbl-${index}`}
-              x={point.x}
-              y={height - padding.bottom + 20}
-              textAnchor="middle"
-              fill="#666"
-              fontSize="10"
-              fontWeight="500"
-            >
-              S{index + 1}
+            <text key={`lbl-${index}`} x={point.x} y={height - padding.bottom + 20} textAnchor="middle" fill="#666" fontSize="10" fontWeight="500">
+              W{index + 1}
             </text>
           ))}
         </svg>
@@ -426,7 +365,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           ))}
         </div>
         <p className="chart-footnote">
-          Illustrative trend only — not live data. Themes: fabric quality, fit satisfaction, and everyday wear.
+          Illustrative trend only — not live data. Themes: nutrition trust, parent satisfaction, and repeat purchases.
         </p>
       </div>
     );
@@ -434,16 +373,15 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
   const tabs = [
     { id: 'metrics', label: 'Signals', iconType: 'metrics' },
-    { id: 'craft', label: 'Craft', iconType: 'craft' },
-    { id: 'occasions', label: 'Use', iconType: 'occasions' },
-    { id: 'gifting', label: 'Gifts', iconType: 'gift' },
-    { id: 'care', label: 'Care', iconType: 'care' },
+    { id: 'ingredients', label: 'Ingredients', iconType: 'ingredients' },
+    { id: 'stages', label: 'Stages', iconType: 'stages' },
+    { id: 'gifting', label: 'Gifts', iconType: 'gifting' },
+    { id: 'preparation', label: 'Prep', iconType: 'preparation' },
     { id: 'shipping', label: 'Ship', iconType: 'shipping' },
     { id: 'brand', label: 'Brand', iconType: 'brand' },
   ];
 
   const currentInfo = brandInfo[activeTab];
-
   const sparkleGrad = `${baseId}-sparkle`;
 
   return (
@@ -454,7 +392,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             type="button"
             className={`ai-brand-engine-trigger${compact ? ' abe-compact' : ''}`}
             onClick={() => setIsExpanded(true)}
-            aria-label="Open clothing insights for Saadaa"
+            aria-label="Open nutrition insights for Mamma Mills"
           >
             <div className="trigger-icon">
               <span className="ai-gemini-rotator" aria-hidden="true">
@@ -463,21 +401,21 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             </div>
             {!compact && (
               <div className="trigger-text">
-                <span className="trigger-label">Style insights</span>
-                <span className="trigger-sublabel">Saadaa</span>
+                <span className="trigger-label">Nutrition insights</span>
+                <span className="trigger-sublabel">Mamma Mills</span>
               </div>
             )}
             <span className="trigger-badge">AI</span>
           </button>
           {!compact && (
             <div className="ai-brand-engine-tooltip" role="note">
-              Fabric, fit & style insights — tap to explore
+              Ingredients, feeding stages & brand insights — tap to explore
               <span className="ai-brand-engine-tooltip__arrow" aria-hidden />
             </div>
           )}
         </div>
       ) : (
-        <div className="ai-brand-engine-panel" role="dialog" aria-label="Saadaa clothing insights">
+        <div className="ai-brand-engine-panel" role="dialog" aria-label="Mamma Mills nutrition insights">
           <div className="panel-header">
             <div className="header-left">
               <div className="header-icon">
@@ -485,7 +423,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               </div>
               <div>
                 <h3 className="panel-title">AI Brand Engine</h3>
-                <p className="panel-subtitle">Saadaa · better basics · everyday wear</p>
+                <p className="panel-subtitle">Mamma Mills · not just food, it is nutrition</p>
               </div>
             </div>
             <button type="button" className="panel-close-btn" onClick={() => setIsExpanded(false)} aria-label="Close">
@@ -544,7 +482,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
                 </div>
                 <div className="panel-content-cta">
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--primary">
-                    Shop Saadaa
+                    Shop Mamma Mills
                   </a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--ghost">
                     Instagram
@@ -559,10 +497,10 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               <span className="footer-badge-icon" aria-hidden>
                 <PremiumAIIcon gradientId={`${baseId}-foot`} size={18} />
               </span>
-              <span>Curated for everyday clothing & style</span>
+              <span>Curated for baby nutrition & weaning</span>
             </div>
             <p className="footer-note">
-              For clothing and styling — summaries are for inspiration only. Check product pages and policies on instagram.com/saadaadesigns before you buy.
+              For nutrition guidance — always consult your paediatrician. Summaries are for information only. Check product pages and policies on mammamills.com before you buy.
             </p>
           </div>
         </div>

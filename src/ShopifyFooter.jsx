@@ -1,4 +1,3 @@
-import React from 'react';
 import footerLap from './assets/footer_lap.png';
 import footerPhone from './assets/footer_phone.png';
 

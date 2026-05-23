@@ -1,8 +1,5 @@
-import React from 'react';
 import headerLap from './assets/header_lap.png';
-import h1Lap from './assets/h1_lap.png';
 import headerPhone from './assets/header_phone.png';
-import h1Phone from './assets/h1_phone.png';
 import HeaderReels from './HeaderReels';
 
 const ShopifyHeader = ({ onProductClick }) => {
@@ -14,18 +11,8 @@ const ShopifyHeader = ({ onProductClick }) => {
         className="hidden md:block w-full h-auto"
       />
       <img
-        src={h1Lap}
-        alt="Featured products"
-        className="hidden md:block w-full h-auto"
-      />
-      <img
         src={headerPhone}
         alt="Header"
-        className="block md:hidden w-full h-auto"
-      />
-      <img
-        src={h1Phone}
-        alt="Featured products"
         className="block md:hidden w-full h-auto"
       />
       <HeaderReels onViewProduct={onProductClick} />

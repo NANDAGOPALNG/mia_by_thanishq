@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const getRandomInRange = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;

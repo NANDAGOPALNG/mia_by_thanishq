@@ -5,6 +5,7 @@ import AIBrandEngine from './AIBrandEngine';
 import PhotoGallery, { GALLERY_IMAGES } from './PhotoGallery';
 import ProductCard from './ProductCard';
 import TrustSignalsRotator from './TrustSignals';
+import InstagramTrustCarousel from './InstagramTrustCarousel';
 import PdpHeroReviewRotator from './PdpHeroReviewRotator';
 
 // ============================================
@@ -17,16 +18,11 @@ import brandLogo from './assets/brand.png';
 import { SCRAPSHALA_SHOP_VIDEOS, PDP_DRAGGABLE_VIDEO, MUUN_SHOP_VIDEO_CLIPS } from './scrapshalaShopVideos';
 import {
   bestSellerProducts,
-  MUUN_HOME_PRODUCT_IMAGES,
-  MUUN_HOME_GALLERY_IMAGES,
+  MAMMA_MILLS_PRODUCT_IMAGES,
 } from './scrapshalaBestSellers';
 
 import reviewData from '../review.json';
 import { INSTAGRAM_POST_URLS } from './instagramPosts';
-
-/** Review images — use gallery images */
-const PRODUCT_REVIEW_IMAGES = GALLERY_IMAGES;
-const BRAND_REVIEW_IMAGES = [...GALLERY_IMAGES].reverse();
 
 function getReviewTitle(text) {
   const first = text.split(/[.!,]/)[0].trim();
@@ -45,48 +41,48 @@ function formatSoldLabel(n) {
 }
 
 
-// Product images — Women Mint Green Airy Linen Short Kurta
+// Product images — Mamma Mills Sprouted Channa & Dalia
 const PRODUCT_PAGE_IMAGES = [
-  'https://saadaa.in/cdn/shop/files/1_1_47d5f39b-c471-43bc-81ed-82c7f87d6a47.webp?v=1757744397&width=700',
-  'https://saadaa.in/cdn/shop/files/mint_green_short_kurta_1.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/2_1_f8a540d1-58bf-4e07-8fe1-bc57a10edcc7.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/10_3ad5cc91-443c-4ce8-96bf-0797348925e2.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/3_1_64456da6-ad7f-45c5-ada0-0c4ea7f9ac01.webp?v=1757745844&width=700',
-  'https://saadaa.in/cdn/shop/files/6_4bc1e929-2a2f-4f94-8cb4-62171cbef29b.webp?v=1757745844&width=700',
+  'https://mammamills.com/cdn/shop/files/BABY_FOOD_-02.png?v=1776835274&width=144',
+  'https://mammamills.com/cdn/shop/files/Box-1A.jpg?v=1776679815&width=2560',
+  'https://mammamills.com/cdn/shop/files/WhatsAppImage2026-03-07at1.00.17PM.jpg?v=1776679815&width=2560',
+  'https://mammamills.com/cdn/shop/files/WhatsAppImage2026-03-07at1.00.19PM.jpg?v=1776679815&width=2560',
 ];
 
+/** Review images — use product page images */
+const PRODUCT_REVIEW_IMAGES = PRODUCT_PAGE_IMAGES;
+const BRAND_REVIEW_IMAGES = [...PRODUCT_PAGE_IMAGES].reverse();
+
 // Brand Name
-const BRAND_NAME = "Saadaa";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/saadaadesigns/';
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '522K';
+const BRAND_NAME = "Mamma Mills";
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/mammamills/';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '50K';
 
 /** Reviews UI — warm neutrals from former section gradient (replacing teal bars) */
-const REVIEW_ACCENT = '#B89B7B';
-const REVIEW_RING_TRACK = '#e5ddd4';
-const REVIEW_SOFT = 'rgba(184, 155, 123, 0.14)';
-const REVIEW_ACCENT_BORDER = 'rgba(184, 155, 123, 0.35)';
+const REVIEW_ACCENT = '#F5A900';
+const REVIEW_RING_TRACK = '#FDE9A0';
+const REVIEW_SOFT = 'rgba(245, 169, 0, 0.10)';
+const REVIEW_ACCENT_BORDER = 'rgba(245, 169, 0, 0.35)';
 
 // Product Video — draggable floating card
 const PRODUCT_VIDEO = PDP_DRAGGABLE_VIDEO;
 
 // Product Details
-const PRODUCT_NAME = "Women Mint Green Airy Linen Short Kurta";
-const PRODUCT_PRICE = 899;
-const PRODUCT_ORIGINAL_PRICE = 0;
-const PRODUCT_DISCOUNT = 0;
-const PRODUCT_SKU = "SAADAA-MGALK-001";
-const PRODUCT_DESCRIPTION = "Crafted from airy linen, this short kurta is perfect for effortless everyday styling. Features a mandarin collar, 3/4 sleeves, and a relaxed fit that keeps you comfortable all day.";
-const PRODUCT_BRAND = "Saadaa";
+const PRODUCT_NAME = "Dalia and brown chana";
+const PRODUCT_PRICE = 299;
+const PRODUCT_ORIGINAL_PRICE = 500;
+const PRODUCT_DISCOUNT = 40;
+const PRODUCT_SKU = "MM-SCD-300G-001";
+const PRODUCT_DESCRIPTION = "Sprouted Channa & Dalia is thoughtfully made with 100% organic ingredients, combining the goodness of dalia and brown channa in a simple, wholesome recipe. Crafted for babies aged 6 to 24 months, this dairy-free and vegan blend is designed to fit seamlessly into the weaning journey. Easy to prepare and gentle in texture, it cooks into a soft porridge-like meal that is both convenient for parents and comforting for little ones.";
+const PRODUCT_IMPORTANT_NOTICE = "Important Notice: Mother's milk is best for your baby. This product is intended for use as complementary food after 6 months of exclusive breastfeeding.";
+const PRODUCT_BRAND = "Mamma Mills";
 const PRODUCT_COLORS = [];
-const PRODUCT_SIZES = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'];
-const PRODUCT_BUST_SIZES = {
-  S: '34" - 35"', M: '36" - 37"', L: '38" - 39"',
-  XL: '40" - 41"', '2XL': '42" - 44"', '3XL': '45" - 46"', '4XL': '47" - 48"',
-};
-const PRODUCT_KURTA_TYPES = ['Short Kurta', 'Long Kurta'];
+const PRODUCT_SIZES = ['300g'];
+const PRODUCT_BUST_SIZES = {};
+const PRODUCT_KURTA_TYPES = [];
 /** Social proof — shown next to rating & reviews on the buy box */
-const PRODUCT_REVIEW_COUNT = 86;
-const PRODUCT_SOLD_COUNT = 340;
+const PRODUCT_REVIEW_COUNT = 124;
+const PRODUCT_SOLD_COUNT = 480;
 
 // You May Also Like — aligned with best sellers
 const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
@@ -103,13 +99,13 @@ const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
 const PDP_REEL_LABELS = MUUN_SHOP_VIDEO_CLIPS.map((c) => c.title);
 
 /** Short keyword chips under rating / reviews on the buy box */
-const PDP_KEYWORD_TAGS = ['Airy linen', 'Mandarin collar', '3/4 sleeves', 'Everyday wear'];
+const PDP_KEYWORD_TAGS = ['Organic', 'Dairy-free', 'Vegan', '6-24 months', 'Sprouted'];
 
-const PDP_BREADCRUMB_MID = 'Women Shop All Tops';
-const PDP_BREADCRUMB_LAST = 'Women Airy Linen Short Kurtas';
-const PDP_GIFT_PROMO = 'Free dust bag & gift wrapping with every order';
-const PDP_COUPON_CODE = 'CARRY10';
-const PDP_COUPON_COPY = 'Get an extra 10% off on decor picks — use code CARRY10';
+const PDP_BREADCRUMB_MID = 'Baby Food';
+const PDP_BREADCRUMB_LAST = 'Sprouted Channa & Dalia';
+const PDP_GIFT_PROMO = 'Free shipping on all orders across India';
+const PDP_COUPON_CODE = 'MAMA10';
+const PDP_COUPON_COPY = 'Get 10% off your first order — use code MAMA10';
 
 /** Trust row below CTAs */
 const PDP_TRUST_FEATURES = [
@@ -153,16 +149,16 @@ const PDP_TRUST_FEATURES = [
 
 // Fallback blurbs for image modals
 const dummyReviews = [
-  { name: 'Priya Sharma', rating: 5, title: 'Perfect everyday bag', text: 'Ireen holds its shape all day. Interior pockets are well-placed. Strap is comfortable for long carries.', date: '1/20/2025', type: 'product' },
-  { name: 'Anjali Mehta', rating: 5, title: 'Quality is real', text: 'Stitching is clean, zipper smooth, fabric spotless after weeks of use. Looks far more expensive than it is.', date: '1/18/2025', type: 'product' },
-  { name: 'Riya Patel', rating: 4, title: 'Gift for sister', text: 'Bought the Ireen as a birthday gift — she was genuinely impressed. 4 stars only because delivery took an extra day.', date: '1/15/2025', type: 'product' },
-  { name: 'Kavya Reddy', rating: 5, title: 'Exactly like the photos', text: 'Beige colour is identical to the website. No surprises at all. Saadaa delivers exactly what they show.', date: '1/12/2025', type: 'product' },
-  { name: 'Meera Singh', rating: 5, title: 'Office to evening', text: 'Carries my laptop, charger, and essentials without looking overstuffed. Gets compliments every week.', date: '1/10/2025', type: 'product' },
-  { name: 'Sneha Verma', rating: 5, title: 'Great packaging', text: 'Came with a dust bag and proper wrapping. No dents or marks on the bag. Thoughtful unboxing experience.', date: '1/08/2025', type: 'product' },
-  { name: 'Divya Nair', rating: 4, title: 'Very clean finish', text: 'Hardware is solid and not flimsy. Handles feel premium. One tiny loose thread but the bag itself is excellent.', date: '1/05/2025', type: 'product' },
-  { name: 'Pooja Mehta', rating: 5, title: 'Mum approved', text: 'Bought the Wander Tote for mum — she uses it daily. Says straps are comfortable and the bag is light.', date: '1/03/2025', type: 'product' },
-  { name: 'Neha Kapoor', rating: 5, title: 'Second purchase', text: 'First was the City Crossbody. This time the Ireen — same great quality and consistent finish.', date: '12/30/2024', type: 'product' },
-  { name: 'Aarti Desai', rating: 5, title: 'Photographs beautifully', text: 'Used Ireen for a shoot — structured shape shows up great on camera. Team asked about the brand.', date: '12/28/2024', type: 'product' },
+  { name: 'Priya Sharma', rating: 5, title: 'My baby loves it!', text: 'Started giving this at 6 months and my baby took to it immediately. The texture is perfect — smooth and easy to swallow.', date: '1/20/2025', type: 'product' },
+  { name: 'Anjali Mehta', rating: 5, title: 'Clean ingredients', text: 'Finally a baby food with no additives or preservatives. Feels good knowing exactly what my baby is eating.', date: '1/18/2025', type: 'product' },
+  { name: 'Riya Patel', rating: 4, title: 'Great for weaning', text: "Made the weaning transition so smooth. Baby enjoys the taste and I love that it's organic. Only 4 stars because I wish it came in a bigger pack.", date: '1/15/2025', type: 'product' },
+  { name: 'Kavya Reddy', rating: 5, title: 'Trusted brand', text: 'Have been using Mamma Mills since my baby was 6 months. Now 14 months and still a daily staple. Consistent quality every time.', date: '1/12/2025', type: 'product' },
+  { name: 'Meera Singh', rating: 5, title: 'So easy to prepare', text: 'Takes just 2 minutes to cook. Perfect for busy mornings. My baby finishes the whole bowl every time.', date: '1/10/2025', type: 'product' },
+  { name: 'Sneha Verma', rating: 5, title: 'Pediatrician recommended', text: 'Our doctor suggested starting with sprouted grains. This checks every box — clean, sprouted, dairy-free. Highly recommend.', date: '1/08/2025', type: 'product' },
+  { name: 'Divya Nair', rating: 4, title: 'Good taste', text: 'My picky eater actually finishes this. The mild flavour works great with breast milk or formula. Very happy with the purchase.', date: '1/05/2025', type: 'product' },
+  { name: 'Pooja Mehta', rating: 5, title: 'Best baby food', text: 'Tried so many brands before this one. Mamma Mills is hands down the best — natural, nutritious, and babies actually like it.', date: '1/03/2025', type: 'product' },
+  { name: 'Neha Kapoor', rating: 5, title: 'Repeat buyer', text: 'On my 4th order now. Quality never drops. Will keep buying as long as my little one enjoys it.', date: '12/30/2024', type: 'product' },
+  { name: 'Aarti Desai', rating: 5, title: 'Perfect first food', text: "Introduced this as my baby's first solid. Gentle on the tummy, no reactions, and she loved the taste from day one.", date: '12/28/2024', type: 'product' },
 ];
 
 const MARKETPLACE_BADGES = [
@@ -680,6 +676,8 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
 
 
+      <InstagramTrustCarousel />
+
       <main className="flex-1 bg-white py-6 md:py-10">
         <div className="mx-auto w-full max-w-6xl px-4 md:px-8">
 
@@ -694,31 +692,46 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-12">
 
-            {/* LEFT — 2×2 image grid */}
+            {/* LEFT — thumbnail sidebar + main image */}
             {(() => {
               const imgs = productImages.length ? productImages : [productHeader];
               return (
-                <div className="grid grid-cols-2 gap-2">
-                  {imgs.slice(0, 4).map((img, i) => (
-                    <div key={i} className="overflow-hidden rounded-lg bg-gray-100" style={{ aspectRatio: '3/4' }}>
-                      <img
-                        src={img}
-                        alt={`${productName} ${i + 1}`}
-                        className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                        onClick={() => { setSelectedImage(i); }}
-                      />
-                    </div>
-                  ))}
-                  {/* Extra images as a hidden section below if needed */}
-                  {imgs.length > 4 && (
-                    <div className="col-span-2 flex gap-2 overflow-x-auto scrollbar-hide pt-1">
-                      {imgs.slice(4).map((img, i) => (
-                        <div key={i} className="w-20 h-28 shrink-0 overflow-hidden rounded-md bg-gray-100">
-                          <img src={img} alt="" className="w-full h-full object-cover" />
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                <div className="flex gap-3">
+                  {/* Thumbnail strip */}
+                  <div className="flex flex-col gap-2 w-16 shrink-0">
+                    {imgs.map((img, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setSelectedImage(i)}
+                        style={{
+                          width: '100%',
+                          aspectRatio: '1/1',
+                          borderRadius: '8px',
+                          overflow: 'hidden',
+                          border: selectedImage === i ? '2px solid #1a1a1a' : '2px solid transparent',
+                          padding: 0,
+                          background: '#f3f4f6',
+                          cursor: 'pointer',
+                          flexShrink: 0,
+                        }}
+                      >
+                        <img
+                          src={img}
+                          alt={`${productName} ${i + 1}`}
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        />
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Main image */}
+                  <div className="flex-1 overflow-hidden rounded-xl bg-gray-100" style={{ aspectRatio: '3/4' }}>
+                    <img
+                      src={imgs[selectedImage] || imgs[0]}
+                      alt={productName}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  </div>
                 </div>
               );
             })()}
@@ -730,6 +743,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               <h1 className="mb-3 text-2xl font-semibold leading-snug text-gray-900 md:text-3xl">
                 {productName}
               </h1>
+
 
               {/* Price row */}
               <div className="mb-1 flex flex-wrap items-baseline gap-3">
@@ -745,12 +759,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
               <p className="mb-4 text-xs text-gray-500">Inclusive of all taxes</p>
 
               {/* Rating row */}
-              <div className="mb-5 flex items-center gap-2">
+              <div className="mb-3 flex items-center gap-2">
                 <span className="flex gap-0.5" aria-label={`${productRating.toFixed(1)} out of 5 stars`}>
                   {[1,2,3,4,5].map((i) => (
                     <svg key={i} width="16" height="16" viewBox="0 0 24 24" aria-hidden>
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                        fill={i <= Math.round(productRating) ? '#fb923c' : '#d1d5db'} />
+                        fill={i <= Math.round(productRating) ? '#F5A900' : '#d1d5db'} />
                     </svg>
                   ))}
                 </span>
@@ -758,58 +772,58 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <span className="text-sm text-gray-400">({productReviews} reviews)</span>
               </div>
 
-              {/* Kurta type selector */}
-              <div className="mb-5">
-                <p className="text-sm font-semibold text-gray-800 mb-2">Kurta :</p>
-                <div className="flex gap-2">
-                  {PRODUCT_KURTA_TYPES.map((type) => (
-                    <button
-                      key={type}
-                      type="button"
-                      onClick={() => setSelectedKurtaType(type)}
-                      className="px-4 py-2 text-sm font-medium border transition-colors"
-                      style={{
-                        borderColor: selectedKurtaType === type ? '#1a1a1a' : '#d1d5db',
-                        backgroundColor: selectedKurtaType === type ? '#1a1a1a' : '#fff',
-                        color: selectedKurtaType === type ? '#fff' : '#1a1a1a',
-                      }}
-                    >
-                      {type}
-                    </button>
-                  ))}
-                </div>
+              {/* Marketplace badge rotator */}
+              <div className="mb-3">
+                <MarketplaceBadgeRotator />
               </div>
 
-              {/* Bust size selector */}
-              <div className="mb-6">
-                <div className="flex items-center justify-between mb-2">
-                  <p className="text-sm font-semibold text-gray-800 uppercase tracking-wide">Your Bust Size:</p>
-                  <button type="button" className="flex items-center gap-1 text-xs text-gray-500 underline">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
-                    </svg>
-                    SIZE CHART
-                  </button>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {PRODUCT_SIZES.map((size) => (
-                    <button
-                      key={size}
-                      type="button"
-                      onClick={() => setSelectedSize(size)}
-                      className="flex flex-col items-center justify-center border transition-colors"
-                      style={{
-                        width: '64px', height: '52px',
-                        borderColor: selectedSize === size ? '#1a1a1a' : '#d1d5db',
-                        backgroundColor: selectedSize === size ? '#1a1a1a' : '#fff',
-                        color: selectedSize === size ? '#fff' : '#1a1a1a',
-                      }}
-                    >
-                      <span className="text-sm font-semibold leading-none">{size}</span>
-                      <span className="text-[10px] leading-tight mt-0.5 opacity-75">{PRODUCT_BUST_SIZES[size]}</span>
-                    </button>
-                  ))}
-                </div>
+              {/* Social proof ticker */}
+              <div className="mb-4">
+                <SocialProofTicker />
+              </div>
+
+              {/* Nutrition keyword chips */}
+              <div className="mb-5 flex flex-wrap gap-2">
+                {[
+                  { label: 'Malted & Fortified', bg: '#FFF3E0', color: '#E65100', border: '#FFB74D' },
+                  { label: 'High in Fibre',       bg: '#E8F5E9', color: '#2E7D32', border: '#81C784' },
+                  { label: 'Rich in Iron',         bg: '#FCE4EC', color: '#C62828', border: '#F48FB1' },
+                  { label: 'Rich in Calcium & Protein', bg: '#E3F2FD', color: '#1565C0', border: '#90CAF9' },
+                ].map(({ label, bg, color, border }) => (
+                  <span
+                    key={label}
+                    style={{
+                      backgroundColor: bg,
+                      color,
+                      border: `1px solid ${border}`,
+                      borderRadius: '6px',
+                      padding: '4px 10px',
+                      fontSize: '11px',
+                      fontWeight: '600',
+                      display: 'inline-block',
+                      lineHeight: '1.5',
+                    }}
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
+
+              {/* Quantity label */}
+              <div className="mb-5">
+                <p className="text-sm text-gray-700 mb-1">
+                  <span className="font-semibold">Quantity</span>&nbsp;&nbsp;300g
+                </p>
+              </div>
+
+              {/* Description */}
+              <div className="mb-5">
+                <p className="text-sm leading-relaxed text-gray-700">{PRODUCT_DESCRIPTION}</p>
+              </div>
+
+              {/* Important Notice */}
+              <div className="mb-5 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
+                <p className="text-xs leading-relaxed text-gray-700 font-semibold">{PRODUCT_IMPORTANT_NOTICE}</p>
               </div>
 
               {/* ADD TO BAG */}
@@ -822,7 +836,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
                   </svg>
-                  ADD TO BAG
+                  ADD TO CART
                 </button>
               </div>
 
@@ -870,7 +884,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         const idx = wildVideoIdx;
         const canWildPrev = idx != null && idx > 0;
         const canWildNext = idx != null && idx < n - 1;
-        const thumbImg = idx != null ? MUUN_HOME_PRODUCT_IMAGES[idx % MUUN_HOME_PRODUCT_IMAGES.length] : MUUN_HOME_PRODUCT_IMAGES[0];
+        const thumbImg = idx != null ? MAMMA_MILLS_PRODUCT_IMAGES[idx % MAMMA_MILLS_PRODUCT_IMAGES.length] : MAMMA_MILLS_PRODUCT_IMAGES[0];
         const reelLabel = idx != null ? PDP_REEL_LABELS[idx % PDP_REEL_LABELS.length] : '';
 
         return (
@@ -895,7 +909,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.8"/>
                       <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
                     </svg>
-                    @saadaadesigns
+                    @mammamills
                   </a>
                 </div>
                 <div className="overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
@@ -959,7 +973,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                   onClick={(e) => e.stopPropagation()}
                   role="dialog"
                   aria-modal="true"
-                  aria-label="Saadaa reels"
+                  aria-label="Mamma Mills reels"
                 >
                   {/* Desktop: previous preview */}
                   <div className="hidden w-[148px] shrink-0 flex-col md:flex">
@@ -1033,7 +1047,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           <img src={thumbImg} alt="" className="w-full h-full object-cover" />
                         </div>
                         <div className="min-w-0">
-                          <p className="text-white text-sm font-semibold leading-none truncate">Saadaa</p>
+                          <p className="text-white text-sm font-semibold leading-none truncate">Mamma Mills</p>
                           <p className="text-white/75 text-xs mt-0.5 truncate">
                             Reel {idx + 1} of {n}
                           </p>
@@ -1105,7 +1119,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         type="button"
                         onClick={() =>
                           navigator.share
-                            ? navigator.share({ title: 'Saadaa', text: reelLabel, url: window.location.href })
+                            ? navigator.share({ title: 'Mamma Mills', text: reelLabel, url: window.location.href })
                             : navigator.clipboard?.writeText(window.location.href)
                         }
                         className="flex flex-col items-center gap-1"
@@ -1133,7 +1147,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                         className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#B99B7B] hover:opacity-95 transition-opacity"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        Follow @saadaadesigns
+                        Follow @mammamills
                       </a>
                     </div>
                   </div>
@@ -1329,7 +1343,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       href={AJNAA_INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open @saadaadesigns on Instagram"
+                      aria-label="Open @mammamills on Instagram"
                       className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B]/35 focus-visible:ring-offset-2"
                       style={{ textDecoration: 'none' }}
                     >
@@ -1358,7 +1372,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </span>
                       <div className="min-w-0 flex-1 text-left">
                         <div className="flex flex-col gap-1.5">
-                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@saadaadesigns</p>
+                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@mammamills</p>
                           <p className="text-[11px] leading-snug text-stone-600">
                             <span className="font-semibold tabular-nums text-stone-800">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL}</span>
                             {' '}
@@ -1387,12 +1401,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-2 pt-4">
                   <h4 className="mb-2.5 font-serif text-lg font-normal tracking-tight text-stone-900 md:text-xl">
-                    What Saadaa customers are saying
+                    What Mamma Mills customers are saying
                   </h4>
                   <p className="text-[14px] leading-[1.65] text-stone-600">
                     {isAISummaryExpanded ? (
                       <>
-                        Shoppers love Saadaa for the breathable linen fabric that stays comfortable all day — especially the airy feel in summer. Reviews highlight true-to-colour photos, accurate sizing, and details like the mandarin collar and 3/4 sleeves. Many customers note the kurtas wash well and hold their shape. Repeat buyers are common, and several mention gifting Saadaa to friends and family.{' '}
+                        Parents love Mamma Mills for the clean, organic ingredients and how easy the porridge is to prepare. Reviews highlight the soft texture that babies take to quickly, the dairy-free and vegan formulation, and the trustworthy sourcing. Many mention it as a staple from 6 months onward, and repeat purchases are very common. Several parents note their babies prefer this over other brands.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(false)}
@@ -1403,7 +1417,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </>
                     ) : (
                       <>
-                        Customers praise Saadaa for airy linen quality, true-to-colour fits, and comfortable everyday wear — perfect from office to casual outings.{' '}
+                        Parents praise Mamma Mills for organic ingredients, gentle texture, and easy preparation — a wholesome first food babies love.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(true)}
@@ -1418,17 +1432,17 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-4 pt-3 flex flex-wrap items-center gap-2 text-[12px] leading-relaxed">
                   {[
-                    'Airy linen fabric',
-                    'True-to-size',
-                    'Everyday comfort',
-                    'Gift-ready',
+                    'Organic ingredients',
+                    'Dairy-free',
+                    '6–24 months',
+                    'Sprouted grains',
                   ].map((kw) => (
                     <span
                       key={kw}
                       className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-[11px] font-medium text-stone-600"
                       style={{
-                        borderColor: 'rgba(185, 155, 123, 0.35)',
-                        background: 'linear-gradient(135deg, rgba(185, 155, 123, 0.12), rgba(255, 255, 255, 0.95))',
+                        borderColor: 'rgba(245, 169, 0, 0.35)',
+                        background: 'linear-gradient(135deg, rgba(245, 169, 0, 0.10), rgba(255, 255, 255, 0.95))',
                       }}
                     >
                       {kw}
@@ -1437,10 +1451,10 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 </div>
 
                 <div className="border-t border-stone-200/50 px-4 pb-4 pt-3 sm:px-6">
-                  <div className="inline-flex w-full gap-2 rounded-lg bg-stone-100/70 p-1" role="tablist" aria-label="Review category">
+                  <div className="inline-flex gap-2" role="tablist" aria-label="Review category">
                     {[
-                      ['product', 'Product reviews'],
-                      ['brand', 'Brand reviews'],
+                      ['product', 'Product Reviews'],
+                      ['brand', 'Brand Reviews'],
                     ].map(([id, label]) => {
                       const selected = activeTab === id;
                       return (
@@ -1450,11 +1464,18 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                           role="tab"
                           aria-selected={selected}
                           onClick={() => setActiveTab(id)}
-                          className={`flex-1 rounded-md py-2 text-center text-xs font-semibold transition-all ${
-                            selected
-                              ? 'bg-white text-stone-900 shadow-sm'
-                              : 'text-stone-500 hover:text-stone-700'
-                          }`}
+                          style={{
+                            padding: '6px 16px',
+                            borderRadius: '999px',
+                            fontSize: '12px',
+                            fontWeight: '600',
+                            border: selected ? '1.5px solid #F5A900' : '1.5px solid #e5e7eb',
+                            backgroundColor: selected ? '#F5A900' : '#fff',
+                            color: selected ? '#fff' : '#6b7280',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s ease',
+                            whiteSpace: 'nowrap',
+                          }}
                         >
                           {label}
                         </button>
@@ -1598,7 +1619,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                                 })}
                               </div>
                               <span className="truncate text-xs font-semibold text-stone-900">{review.name}</span>
-                              <svg className="h-3 w-3 shrink-0 text-[#B99B7B]" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="h-5 w-5 shrink-0 text-[#16a34a]" fill="currentColor" viewBox="0 0 20 20">
                                 <path
                                   fillRule="evenodd"
                                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
@@ -1678,10 +1699,10 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                     <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
                       <div>
                         <h3 className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-stone-500">CUSTOMER PHOTOS</h3>
-                        <p className="text-sm text-stone-600">Real moments, real craft — click any photo to read the story</p>
+                        <p className="text-sm text-stone-600">Real families, real results — click any photo to read the story</p>
                       </div>
                       <span className="rounded-none bg-stone-100 px-3 py-1 text-xs font-medium tabular-nums text-stone-600">
-                        {GALLERY_IMAGES.length} photos
+                        {PRODUCT_PAGE_IMAGES.length} photos
                       </span>
                     </div>
 
@@ -1694,7 +1715,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       .bg-item:hover img { transform: scale(1.04); }
                     `}</style>
                     <div className="brand-gallery-grid">
-                      {GALLERY_IMAGES.map((src, idx) => {
+                      {PRODUCT_PAGE_IMAGES.map((src, idx) => {
                         return (
                           <div
                             key={idx}
