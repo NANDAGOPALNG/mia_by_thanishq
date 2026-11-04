@@ -37,7 +37,7 @@ const TIME_LABELS = [
   '8 min ago',
 ];
 
-/** Social-proof rotator — product titles & imagery from Scrapshala catalog */
+/** Social-proof rotator — product titles & imagery from the Mia catalog */
 function buildActivitiesFromScrapshala(products) {
   if (!products.length) return [];
   const out = [];

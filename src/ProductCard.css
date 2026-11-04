@@ -1,4 +1,4 @@
-/* Mamma Mills product card */
+/* Mia by Tanishq product card */
 
 .pc-card {
   display: flex;
@@ -53,7 +53,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* ── Nutrition tags ── */
+/* ── Product tags ── */
 .pc-tags {
   display: flex;
   flex-wrap: wrap;

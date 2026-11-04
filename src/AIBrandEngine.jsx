@@ -1,8 +1,8 @@
 import { useId, useState } from 'react';
 import './AIBrandEngine.css';
 
-const SHOP_URL = 'https://mammamills.com/';
-const INSTAGRAM_URL = 'https://www.instagram.com/mammamills/';
+const SHOP_URL = 'https://www.miabytanishq.com/';
+const INSTAGRAM_URL = 'https://www.instagram.com/miabytanishq/';
 
 function PremiumAIIcon({ gradientId, className, style, size = 40 }) {
   return (
@@ -93,107 +93,107 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
   const brandInfo = {
     ingredients: {
-      title: 'Clean ingredients',
+      title: 'Metal & diamonds',
       iconType: 'ingredients',
       content: [
         {
-          label: 'Sprouted grains',
-          value: '100% organic',
-          description: 'Sprouting breaks down phytic acid, improving nutrient absorption and making digestion easier for babies.',
+          label: 'Gold purity',
+          value: '9KT · 14KT · 18KT',
+          description: 'Lightweight, durable gold alloys that hold diamonds securely and are made for everyday wear.',
         },
         {
-          label: 'Dairy-free & vegan',
-          value: 'No hidden allergens',
-          description: 'Formulated without milk solids, making it suitable for babies with dairy sensitivity.',
+          label: 'Diamonds',
+          value: 'Certified natural',
+          description: 'Every diamond is quality-checked for cut, colour and clarity and comes with a certificate.',
         },
         {
-          label: 'No additives',
-          value: 'Zero preservatives',
-          description: 'No added sugar, no artificial flavours, no preservatives — just real food for real little ones.',
+          label: 'Hallmark',
+          value: 'BIS hallmarked',
+          description: 'All gold jewellery is BIS hallmarked, so you always know exactly what you are buying.',
         },
       ],
       highlights: [
-        'Every batch is made with traceable, organic ingredients.',
-        'Sprouting increases iron, calcium, and fibre bioavailability naturally.',
-        'Approved by paediatricians for babies from 6 months onwards.',
+        'Backed by the trust of Tanishq — a TATA product.',
+        'Yellow, rose and white gold options across most designs.',
+        'Fine finishing designed to sit comfortably all day.',
       ],
     },
     stages: {
-      title: 'Feeding stages',
+      title: 'Collections',
       iconType: 'stages',
       content: [
         {
-          label: '6–8 months',
-          value: 'First solids',
-          description: 'Smooth porridge consistency — ideal for babies just starting their weaning journey.',
+          label: 'Starburst',
+          value: 'Celestial sparkle',
+          description: 'Star and moon motifs with diamonds that catch the light from every angle.',
         },
         {
-          label: '9–12 months',
-          value: 'Growing appetite',
-          description: 'Thicker texture supports developing chewing skills and growing nutritional needs.',
+          label: 'Aurum',
+          value: 'Modern gold',
+          description: 'Bold yet light gold silhouettes that move from desk to dinner.',
         },
         {
-          label: '12–24 months',
-          value: 'Toddler staple',
-          description: 'High protein and iron content supports active toddlers through the day.',
+          label: 'Aspire',
+          value: 'Everyday minimal',
+          description: 'Delicate rings, studs and pendants for a polished daily look.',
         },
       ],
       highlights: [
-        'One product that works across the full 6–24 month weaning window.',
-        'Texture can be adjusted by adding more or less water to suit your baby\'s stage.',
-        'Consistent nutrition that grows with your baby\'s changing needs.',
+        'New collections drop through the year — Zen, Modern Polki, Sunkissed and more.',
+        'Mix and match pieces across collections to build your own stack.',
+        'Designs for every budget, starting from gifting-friendly price points.',
       ],
     },
     gifting: {
-      title: 'Gift for new mums',
+      title: 'Gifting',
       iconType: 'gifting',
       content: [
         {
           label: 'Who it\'s for',
-          value: 'New & expecting mums',
-          description: 'A thoughtful, practical gift for any mum starting or continuing the weaning journey.',
+          value: 'Her, him & you',
+          description: 'Rings, studs, bracelets and pendants that make a meaningful gift for anyone you love.',
         },
         {
           label: 'Occasions',
-          value: 'Baby shower & more',
-          description: 'Baby showers, naming ceremonies, or just a caring gesture — Mamma Mills is always welcome.',
+          value: 'Festive & milestones',
+          description: 'Diwali, Dhanteras, birthdays, anniversaries and Raksha Bandhan — Mia is always welcome.',
         },
         {
           label: 'Presentation',
-          value: 'Clean packaging',
-          description: 'Arrives securely sealed and neatly packaged — ready to gift without extra wrapping.',
+          value: 'Gift-ready box',
+          description: 'Arrives in signature Mia packaging with a certificate — ready to gift. Gift cards also available.',
         },
       ],
       highlights: [
-        'Mums love receiving something that is actually useful and healthy.',
-        'Paediatrician-friendly ingredient list — no guilt, no guessing.',
-        'A brand trusted by thousands of Indian families.',
+        'A curated Gifting Range across price points.',
+        'Lifetime exchange means the gift keeps its value.',
+        'Gift cards let them choose their own sparkle.',
       ],
     },
     preparation: {
-      title: 'How to prepare',
+      title: 'Care & exchange',
       iconType: 'preparation',
       content: [
         {
-          label: 'Cook time',
-          value: 'Under 2 minutes',
-          description: 'Add 2–3 tablespoons of powder to warm water or breast milk, stir well, and serve.',
-        },
-        {
-          label: 'Consistency',
-          value: 'Adjustable',
-          description: 'Add more liquid for a thinner porridge (early stages) or less for a thicker feed (older babies).',
+          label: 'Daily care',
+          value: 'Gentle wipe',
+          description: 'Wipe with a soft cloth after wearing; avoid perfumes, lotions and harsh chemicals.',
         },
         {
           label: 'Storage',
-          value: 'Cool & dry place',
-          description: 'Once opened, store in an airtight container away from moisture. Use within 30 days of opening.',
+          value: 'Separate pouch',
+          description: 'Store each piece separately in its box or pouch to prevent scratches.',
+        },
+        {
+          label: 'Exchange',
+          value: 'Lifetime exchange',
+          description: 'Exchange your Mia jewellery at any time, as per the Mia lifetime exchange policy.',
         },
       ],
       highlights: [
-        'No cooking on the stove needed — just warm water and stir.',
-        'Can be mixed with breast milk or formula for added nutrition.',
-        'Ideal for travel — lightweight, compact, and easy to prepare anywhere.',
+        'Gold Exchange Program lets you upgrade old gold to new Mia designs.',
+        'Jewellery Purchase Plan helps you save towards your next piece.',
+        'Find a Mia store near you for cleaning and servicing.',
       ],
     },
     shipping: {
@@ -202,62 +202,62 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
       content: [
         {
           label: 'Pan-India delivery',
-          value: 'Trackable',
-          description: 'Every order ships with real-time tracking — check estimated delivery at checkout for your PIN.',
+          value: 'Insured & tracked',
+          description: 'Every order ships fully insured with real-time tracking — check delivery dates for your PIN at checkout.',
         },
         {
-          label: 'COD available',
-          value: 'Pay on delivery',
-          description: 'Cash on delivery available at checkout for eligible pincodes across India.',
+          label: 'International',
+          value: 'Ships abroad',
+          description: 'International shipping is available to select countries.',
         },
         {
-          label: '7-day returns',
+          label: 'Returns',
           value: 'Easy returns',
-          description: 'Not satisfied? Raise a return within 7 days of delivery. Check policy page for full details.',
+          description: 'Not happy? Raise a return within the return window. See the returns policy for details.',
         },
       ],
       highlights: [
-        'Orders are sealed and packed to preserve freshness during transit.',
-        'Free shipping available on orders above a minimum value — check cart for current offer.',
-        'Dispatch within 1–2 business days of order confirmation.',
+        'Tamper-proof, discreet packaging for every order.',
+        'Track your order anytime from your account.',
+        'Customer care at 1800-266-0123, plus Write to Us and chat support.',
       ],
     },
     brand: {
-      title: 'Mamma Mills',
+      title: 'Mia by Tanishq',
       iconType: 'brand',
       content: [
         {
           label: 'Brand promise',
-          value: 'Not just food, it is nutrition',
-          description: 'Mamma Mills exists to make every baby\'s first food honest, organic, and truly nourishing.',
+          value: 'A TATA product',
+          description: 'Mia by Tanishq makes fine gold and diamond jewellery for the modern woman — light, wearable and stylish.',
         },
         {
           label: 'Products',
-          value: 'Sprouted baby foods',
-          description: 'Channa & Dalia, Ragi Idli Mix, and more — all crafted for babies aged 6 to 24 months.',
+          value: 'Gold & diamond',
+          description: 'Rings, earrings, necklaces, pendants, bracelets, bangles, mangalsutra and more.',
         },
         {
           label: 'Community',
-          value: '@mammamills',
-          description: 'Weaning tips, real mum stories, and new product drops on Instagram.',
+          value: '@miabytanishq',
+          description: 'Styling tips, new collection drops and festive offers on Instagram.',
         },
       ],
       highlights: [
-        'Trusted by thousands of Indian families for clean, sprouted baby nutrition.',
-        'FSSAI certified and paediatrician recommended.',
-        'A brand built by mums, for mums — food with a soul, crafted with purpose.',
+        'Trusted by millions of women across India.',
+        'BIS hallmarked gold and certified diamonds.',
+        'Shop online or at Mia stores across the country.',
       ],
     },
   };
 
   const graphData = {
     satisfaction: {
-      label: 'Parent satisfaction',
+      label: 'Customer satisfaction',
       data: [82, 85, 87, 89, 90, 92, 94],
       color: '#F5A900',
     },
     nutrition: {
-      label: 'Nutritional trust',
+      label: 'Quality trust',
       data: [78, 81, 84, 86, 88, 90, 93],
       color: '#FBBF24',
     },
@@ -285,7 +285,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
   const metrics = [
     { id: 'satisfaction', label: 'Happy' },
-    { id: 'nutrition', label: 'Nutrition' },
+    { id: 'nutrition', label: 'Quality' },
     { id: 'repeat', label: 'Repeat' },
     { id: 'delivery', label: 'Ship' },
     { id: 'rating', label: 'Stars' },
@@ -325,7 +325,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
     return (
       <div className="chart-container">
         <div className="chart-header">
-          <h5 className="chart-title">Mamma Mills customer trust snapshot</h5>
+          <h5 className="chart-title">Mia customer trust snapshot</h5>
           <div className="chart-value">{displayValue}</div>
         </div>
         <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} className="chart-svg" preserveAspectRatio="xMidYMid meet">
@@ -365,7 +365,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           ))}
         </div>
         <p className="chart-footnote">
-          Illustrative trend only — not live data. Themes: nutrition trust, parent satisfaction, and repeat purchases.
+          Illustrative trend only — not live data. Themes: quality trust, customer satisfaction, and repeat purchases.
         </p>
       </div>
     );
@@ -373,10 +373,10 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
 
   const tabs = [
     { id: 'metrics', label: 'Signals', iconType: 'metrics' },
-    { id: 'ingredients', label: 'Ingredients', iconType: 'ingredients' },
-    { id: 'stages', label: 'Stages', iconType: 'stages' },
+    { id: 'ingredients', label: 'Metal', iconType: 'ingredients' },
+    { id: 'stages', label: 'Collections', iconType: 'stages' },
     { id: 'gifting', label: 'Gifts', iconType: 'gifting' },
-    { id: 'preparation', label: 'Prep', iconType: 'preparation' },
+    { id: 'preparation', label: 'Care', iconType: 'preparation' },
     { id: 'shipping', label: 'Ship', iconType: 'shipping' },
     { id: 'brand', label: 'Brand', iconType: 'brand' },
   ];
@@ -392,7 +392,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             type="button"
             className={`ai-brand-engine-trigger${compact ? ' abe-compact' : ''}`}
             onClick={() => setIsExpanded(true)}
-            aria-label="Open nutrition insights for Mamma Mills"
+            aria-label="Open jewellery insights for Mia by Tanishq"
           >
             <div className="trigger-icon">
               <span className="ai-gemini-rotator" aria-hidden="true">
@@ -401,8 +401,8 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
             </div>
             {!compact && (
               <div className="trigger-text">
-                <span className="trigger-label">Nutrition insights</span>
-                <span className="trigger-sublabel">Mamma Mills</span>
+                <span className="trigger-label">Jewellery insights</span>
+                <span className="trigger-sublabel">Mia by Tanishq</span>
               </div>
             )}
             <span className="trigger-badge">AI</span>
@@ -415,7 +415,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
           )}
         </div>
       ) : (
-        <div className="ai-brand-engine-panel" role="dialog" aria-label="Mamma Mills nutrition insights">
+        <div className="ai-brand-engine-panel" role="dialog" aria-label="Mia by Tanishq jewellery insights">
           <div className="panel-header">
             <div className="header-left">
               <div className="header-icon">
@@ -423,7 +423,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               </div>
               <div>
                 <h3 className="panel-title">AI Brand Engine</h3>
-                <p className="panel-subtitle">Mamma Mills · not just food, it is nutrition</p>
+                <p className="panel-subtitle">Mia by Tanishq · a TATA product</p>
               </div>
             </div>
             <button type="button" className="panel-close-btn" onClick={() => setIsExpanded(false)} aria-label="Close">
@@ -482,7 +482,7 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
                 </div>
                 <div className="panel-content-cta">
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--primary">
-                    Shop Mamma Mills
+                    Shop Mia
                   </a>
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="abe-cta abe-cta--ghost">
                     Instagram
@@ -497,10 +497,10 @@ function AIBrandEngine({ showExtras = true, compact = false }) {
               <span className="footer-badge-icon" aria-hidden>
                 <PremiumAIIcon gradientId={`${baseId}-foot`} size={18} />
               </span>
-              <span>Curated for baby nutrition & weaning</span>
+              <span>Curated for gold & diamond jewellery</span>
             </div>
             <p className="footer-note">
-              For nutrition guidance — always consult your paediatrician. Summaries are for information only. Check product pages and policies on mammamills.com before you buy.
+              Summaries are for information only. Check product pages and policies on miabytanishq.com before you buy.
             </p>
           </div>
         </div>

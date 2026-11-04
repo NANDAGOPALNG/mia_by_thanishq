@@ -31,9 +31,9 @@ function RatingBadge({ value }) {
 }
 
 export default function InstagramTrustCarousel({
-  instagramUrl = 'https://www.instagram.com/mammamills/',
-  followersLabel = '50K',
-  shopUrl = 'https://mammamills.com/',
+  instagramUrl = 'https://www.instagram.com/miabytanishq/',
+  followersLabel = '1M',
+  shopUrl = 'https://www.miabytanishq.com/',
   amazonUrl = 'https://www.amazon.in/',
   flipkartUrl = 'https://www.flipkart.com/',
 }) {
@@ -41,27 +41,27 @@ export default function InstagramTrustCarousel({
     {
       key: 'trusted',
       href: shopUrl,
-      ariaLabel: 'Trusted by parents — Mamma Mills',
+      ariaLabel: 'Trusted by millions — Mia by Tanishq',
       icon: <StarRow />,
-      text: 'Trusted by 10,000+ Parents',
+      text: 'A TATA Product · Trusted by Millions',
       badge: null,
     },
     {
       key: 'instagram',
       href: instagramUrl,
-      ariaLabel: 'Mamma Mills on Instagram',
+      ariaLabel: 'Mia by Tanishq on Instagram',
       icon: (
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1306C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4.5" /><circle cx="17.5" cy="6.5" r="1" fill="#E1306C" stroke="none" />
         </svg>
       ),
-      text: `${followersLabel}+ followers · @mammamills`,
+      text: `${followersLabel}+ followers · @miabytanishq`,
       badge: null,
     },
     {
       key: 'amazon',
       href: amazonUrl,
-      ariaLabel: 'Mamma Mills on Amazon India',
+      ariaLabel: 'Mia by Tanishq on Amazon India',
       icon: <img src={AMAZON_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />,
       text: '480+ ratings · Amazon India',
       badge: '4.5',
@@ -69,7 +69,7 @@ export default function InstagramTrustCarousel({
     {
       key: 'flipkart',
       href: flipkartUrl,
-      ariaLabel: 'Mamma Mills on Flipkart',
+      ariaLabel: 'Mia by Tanishq on Flipkart',
       icon: <img src={FLIPKART_LOGO} alt="" className="h-4 w-auto object-contain" style={{ maxHeight: '16px' }} />,
       text: '320+ reviews · Flipkart',
       badge: '4.4',
@@ -77,9 +77,9 @@ export default function InstagramTrustCarousel({
     {
       key: 'organic',
       href: shopUrl,
-      ariaLabel: 'Organic sprouted baby food — Mamma Mills',
+      ariaLabel: 'BIS hallmarked gold & certified diamonds — Mia by Tanishq',
       icon: <LeafIcon />,
-      text: 'Organic · Sprouted · FSSAI Certified',
+      text: 'BIS Hallmarked · Certified Diamonds',
       badge: null,
     },
   ], [followersLabel, instagramUrl, shopUrl, amazonUrl, flipkartUrl]);

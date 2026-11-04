@@ -1,8 +1,3 @@
-/** Instagram post permalinks for embeds (home carousel + PDP modal) */
-export const INSTAGRAM_POST_URLS = [
-  'https://www.instagram.com/p/DKgdn2kSQOz/?img_index=1',
-  'https://www.instagram.com/p/DI3JIWAo6E0/',
-  'https://www.instagram.com/p/DJTwN6EyhgT/',
-  'https://www.instagram.com/p/DILX-EQIAr7/',
-  'https://www.instagram.com/p/DIIOiW5Ss6t/',
-];
+/** Instagram post permalinks for embeds (PDP modal). Add Mia by Tanishq post URLs here, e.g.
+ *  'https://www.instagram.com/p/<post-id>/'. Left empty so no other brand's posts show in the demo. */
+export const INSTAGRAM_POST_URLS = [];

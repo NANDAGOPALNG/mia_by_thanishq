@@ -15,10 +15,9 @@ import PdpHeroReviewRotator from './PdpHeroReviewRotator';
 import productHeader from './assets/product_header.png';
 import productHeaderPhone from './assets/product_header_phone.png';
 import brandLogo from './assets/brand.png';
-import { SCRAPSHALA_SHOP_VIDEOS, PDP_DRAGGABLE_VIDEO, MUUN_SHOP_VIDEO_CLIPS } from './scrapshalaShopVideos';
 import {
   bestSellerProducts,
-  MAMMA_MILLS_PRODUCT_IMAGES,
+  MIA_PRODUCT_IMAGES,
 } from './scrapshalaBestSellers';
 
 import reviewData from '../review.json';
@@ -41,22 +40,17 @@ function formatSoldLabel(n) {
 }
 
 
-// Product images — Mamma Mills Sprouted Channa & Dalia
-const PRODUCT_PAGE_IMAGES = [
-  'https://mammamills.com/cdn/shop/files/BABY_FOOD_-02.png?v=1776835274&width=144',
-  'https://mammamills.com/cdn/shop/files/Box-1A.jpg?v=1776679815&width=2560',
-  'https://mammamills.com/cdn/shop/files/WhatsAppImage2026-03-07at1.00.17PM.jpg?v=1776679815&width=2560',
-  'https://mammamills.com/cdn/shop/files/WhatsAppImage2026-03-07at1.00.19PM.jpg?v=1776679815&width=2560',
-];
+// Product images — Mia by Tanishq (default product: Twinkling Stars 14Kt Diamond Stud Earrings)
+const PRODUCT_PAGE_IMAGES = MIA_PRODUCT_IMAGES;
 
 /** Review images — use product page images */
 const PRODUCT_REVIEW_IMAGES = PRODUCT_PAGE_IMAGES;
 const BRAND_REVIEW_IMAGES = [...PRODUCT_PAGE_IMAGES].reverse();
 
 // Brand Name
-const BRAND_NAME = "Mamma Mills";
-const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/mammamills/';
-const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '50K';
+const BRAND_NAME = 'Mia by Tanishq';
+const AJNAA_INSTAGRAM_URL = 'https://www.instagram.com/miabytanishq/';
+const AJNAA_INSTAGRAM_FOLLOWERS_LABEL = '1M';
 
 /** Reviews UI — warm neutrals from former section gradient (replacing teal bars) */
 const REVIEW_ACCENT = '#F5A900';
@@ -64,20 +58,18 @@ const REVIEW_RING_TRACK = '#FDE9A0';
 const REVIEW_SOFT = 'rgba(245, 169, 0, 0.10)';
 const REVIEW_ACCENT_BORDER = 'rgba(245, 169, 0, 0.35)';
 
-// Product Video — draggable floating card
-const PRODUCT_VIDEO = PDP_DRAGGABLE_VIDEO;
 
 // Product Details
-const PRODUCT_NAME = "Dalia and brown chana";
-const PRODUCT_PRICE = 299;
-const PRODUCT_ORIGINAL_PRICE = 500;
-const PRODUCT_DISCOUNT = 40;
-const PRODUCT_SKU = "MM-SCD-300G-001";
-const PRODUCT_DESCRIPTION = "Sprouted Channa & Dalia is thoughtfully made with 100% organic ingredients, combining the goodness of dalia and brown channa in a simple, wholesome recipe. Crafted for babies aged 6 to 24 months, this dairy-free and vegan blend is designed to fit seamlessly into the weaning journey. Easy to prepare and gentle in texture, it cooks into a soft porridge-like meal that is both convenient for parents and comforting for little ones.";
-const PRODUCT_IMPORTANT_NOTICE = "Important Notice: Mother's milk is best for your baby. This product is intended for use as complementary food after 6 months of exclusive breastfeeding.";
-const PRODUCT_BRAND = "Mamma Mills";
+const PRODUCT_NAME = "Twinkling Stars 14Kt Diamond Stud Earrings";
+const PRODUCT_PRICE = 13760;
+const PRODUCT_ORIGINAL_PRICE = 16299;
+const PRODUCT_DISCOUNT = 16;
+const PRODUCT_SKU = "552923SCDAAA09";
+const PRODUCT_DESCRIPTION = "Crafted in 14KT gold with sparkling certified diamonds, these star-shaped studs from the Starburst collection add a celestial glow to every look. Lightweight enough for everyday wear and elegant enough for festive evenings, they make a thoughtful gift for yourself or someone special.";
+const PRODUCT_IMPORTANT_NOTICE = "Every Mia piece is BIS hallmarked and comes with a certificate of authenticity. Final price may vary slightly with the gold rate and diamond weight.";
+const PRODUCT_BRAND = "Mia by Tanishq";
 const PRODUCT_COLORS = [];
-const PRODUCT_SIZES = ['300g'];
+const PRODUCT_SIZES = [];
 const PRODUCT_BUST_SIZES = {};
 const PRODUCT_KURTA_TYPES = [];
 /** Social proof — shown next to rating & reviews on the buy box */
@@ -95,22 +87,20 @@ const RELATED_PRODUCTS = bestSellerProducts.slice(0, 4).map((p) => ({
   reviews: p.reviewCount,
 }));
 
-/** Reel pill captions — same order & copy as `MUUN_SHOP_VIDEO_CLIPS` on the home page */
-const PDP_REEL_LABELS = MUUN_SHOP_VIDEO_CLIPS.map((c) => c.title);
 
 /** Short keyword chips under rating / reviews on the buy box */
-const PDP_KEYWORD_TAGS = ['Organic', 'Dairy-free', 'Vegan', '6-24 months', 'Sprouted'];
+const PDP_KEYWORD_TAGS = ['14KT Gold', 'Certified Diamonds', 'BIS Hallmarked', 'Everyday Wear', 'Gift Ready'];
 
-const PDP_BREADCRUMB_MID = 'Baby Food';
-const PDP_BREADCRUMB_LAST = 'Sprouted Channa & Dalia';
-const PDP_GIFT_PROMO = 'Free shipping on all orders across India';
-const PDP_COUPON_CODE = 'MAMA10';
-const PDP_COUPON_COPY = 'Get 10% off your first order — use code MAMA10';
+const PDP_BREADCRUMB_MID = 'Earrings';
+const PDP_BREADCRUMB_LAST = 'Twinkling Stars Diamond Studs';
+const PDP_GIFT_PROMO = 'Free insured shipping on all orders across India';
+const PDP_COUPON_CODE = 'MIAFESTIVE';
+const PDP_COUPON_COPY = 'Up to 100% off on making charges of diamond jewellery — offer auto-applies in cart';
 
 /** Trust row below CTAs */
 const PDP_TRUST_FEATURES = [
   {
-    label: 'Easy 7 Days Return',
+    label: '15 Days Easy Return',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -126,7 +116,7 @@ const PDP_TRUST_FEATURES = [
     ),
   },
   {
-    label: '1 Year Warranty',
+    label: 'Lifetime Exchange',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -134,7 +124,7 @@ const PDP_TRUST_FEATURES = [
     ),
   },
   {
-    label: 'Premium Material',
+    label: 'BIS Hallmarked Gold',
     icon: (
       <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 3l14 9-14 9V3z" />
@@ -149,16 +139,16 @@ const PDP_TRUST_FEATURES = [
 
 // Fallback blurbs for image modals
 const dummyReviews = [
-  { name: 'Priya Sharma', rating: 5, title: 'My baby loves it!', text: 'Started giving this at 6 months and my baby took to it immediately. The texture is perfect — smooth and easy to swallow.', date: '1/20/2025', type: 'product' },
-  { name: 'Anjali Mehta', rating: 5, title: 'Clean ingredients', text: 'Finally a baby food with no additives or preservatives. Feels good knowing exactly what my baby is eating.', date: '1/18/2025', type: 'product' },
-  { name: 'Riya Patel', rating: 4, title: 'Great for weaning', text: "Made the weaning transition so smooth. Baby enjoys the taste and I love that it's organic. Only 4 stars because I wish it came in a bigger pack.", date: '1/15/2025', type: 'product' },
-  { name: 'Kavya Reddy', rating: 5, title: 'Trusted brand', text: 'Have been using Mamma Mills since my baby was 6 months. Now 14 months and still a daily staple. Consistent quality every time.', date: '1/12/2025', type: 'product' },
-  { name: 'Meera Singh', rating: 5, title: 'So easy to prepare', text: 'Takes just 2 minutes to cook. Perfect for busy mornings. My baby finishes the whole bowl every time.', date: '1/10/2025', type: 'product' },
-  { name: 'Sneha Verma', rating: 5, title: 'Pediatrician recommended', text: 'Our doctor suggested starting with sprouted grains. This checks every box — clean, sprouted, dairy-free. Highly recommend.', date: '1/08/2025', type: 'product' },
-  { name: 'Divya Nair', rating: 4, title: 'Good taste', text: 'My picky eater actually finishes this. The mild flavour works great with breast milk or formula. Very happy with the purchase.', date: '1/05/2025', type: 'product' },
-  { name: 'Pooja Mehta', rating: 5, title: 'Best baby food', text: 'Tried so many brands before this one. Mamma Mills is hands down the best — natural, nutritious, and babies actually like it.', date: '1/03/2025', type: 'product' },
-  { name: 'Neha Kapoor', rating: 5, title: 'Repeat buyer', text: 'On my 4th order now. Quality never drops. Will keep buying as long as my little one enjoys it.', date: '12/30/2024', type: 'product' },
-  { name: 'Aarti Desai', rating: 5, title: 'Perfect first food', text: "Introduced this as my baby's first solid. Gentle on the tummy, no reactions, and she loved the taste from day one.", date: '12/28/2024', type: 'product' },
+  { name: 'Priya Sharma', rating: 5, title: 'Absolutely stunning!', text: 'The diamonds sparkle beautifully in daylight. Lightweight and comfortable — I wear them to office every day.', date: '1/20/2025', type: 'product' },
+  { name: 'Anjali Mehta', rating: 5, title: 'Perfect gift', text: 'Bought these for my sister on her birthday. The packaging was elegant and she loved them instantly.', date: '1/18/2025', type: 'product' },
+  { name: 'Riya Patel', rating: 4, title: 'Lovely finish', text: 'Very fine finishing and the gold tone is rich. Only 4 stars because they are a bit smaller than I imagined.', date: '1/15/2025', type: 'product' },
+  { name: 'Kavya Reddy', rating: 5, title: 'Trusted brand', text: 'Being a Tanishq brand, I was confident about the quality and hallmark. The certificate came along with the order.', date: '1/12/2025', type: 'product' },
+  { name: 'Meera Singh', rating: 5, title: 'Everyday elegance', text: 'Minimal yet classy. Goes with both ethnic and western outfits. Getting compliments every time I wear them.', date: '1/10/2025', type: 'product' },
+  { name: 'Sneha Verma', rating: 5, title: 'Great festive pick', text: 'Picked these during the festive offer and saved a lot on making charges. Totally worth it.', date: '1/08/2025', type: 'product' },
+  { name: 'Divya Nair', rating: 4, title: 'Comfortable to wear', text: 'Secure screw back and no irritation even after a full day. Delivery was quick and well packed.', date: '1/05/2025', type: 'product' },
+  { name: 'Pooja Mehta', rating: 5, title: 'Best diamond studs', text: 'Compared many brands before buying. Mia has the best design and value for diamond jewellery.', date: '1/03/2025', type: 'product' },
+  { name: 'Neha Kapoor', rating: 5, title: 'Repeat buyer', text: 'My third Mia purchase now. Quality is consistent and the lifetime exchange gives peace of mind.', date: '12/30/2024', type: 'product' },
+  { name: 'Aarti Desai', rating: 5, title: 'Anniversary gift', text: 'My husband gifted these on our anniversary. Delicate, sparkly and exactly like the pictures.', date: '12/28/2024', type: 'product' },
 ];
 
 const MARKETPLACE_BADGES = [
@@ -358,33 +348,6 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
   }, []);
   const [showInstagramModal, setShowInstagramModal] = useState(false);
   const [instagramLoading, setInstagramLoading] = useState(true);
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [showVideoCard, setShowVideoCard] = useState(true);
-  const [wildVideoIdx, setWildVideoIdx] = useState(null);
-  const [pdpWildMuted, setPdpWildMuted] = useState(true);
-  const [pdpWildLiked, setPdpWildLiked] = useState(false);
-  const pdpWildVideoRef = React.useRef(null);
-  const pdpWildLastWheel = React.useRef(0);
-  const dragCardRef = React.useRef(null);
-  const dragOffset = React.useRef({ x: 0, y: 0 });
-  const dragPos = React.useRef({ x: null, y: null });
-  const dragVideoRef = React.useRef(null);
-
-  // Set initial position of drag card to bottom-right corner
-  useEffect(() => {
-    if (dragCardRef.current) {
-      const card = dragCardRef.current;
-      const x = window.innerWidth - card.offsetWidth - 16;
-      const y = window.innerHeight - card.offsetHeight - 16;
-      card.style.left = `${x}px`;
-      card.style.top = `${y}px`;
-      dragPos.current = { x, y };
-    }
-    if (dragVideoRef.current) {
-      dragVideoRef.current.muted = true;
-      dragVideoRef.current.play().catch(() => {});
-    }
-  }, [showVideoCard]);
 
   const instagramPosts = INSTAGRAM_POST_URLS;
 
@@ -435,34 +398,6 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       clearTimeout(fallbackTimer);
       };
   }, [showInstagramModal]);
-
-  const pdpReelCount = SCRAPSHALA_SHOP_VIDEOS.length;
-
-  useEffect(() => {
-    if (wildVideoIdx === null) return;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    const onKey = (e) => {
-      if (e.key === 'Escape') setWildVideoIdx(null);
-      if (e.key === 'ArrowLeft') {
-        setWildVideoIdx((i) => (i != null && i > 0 ? i - 1 : i));
-      }
-      if (e.key === 'ArrowRight') {
-        setWildVideoIdx((i) => (i != null && i < pdpReelCount - 1 ? i + 1 : i));
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => {
-      document.body.style.overflow = prevOverflow;
-      window.removeEventListener('keydown', onKey);
-    };
-  }, [wildVideoIdx, pdpReelCount]);
-
-  useEffect(() => {
-    if (wildVideoIdx !== null && pdpWildVideoRef.current) {
-      pdpWildVideoRef.current.muted = pdpWildMuted;
-    }
-  }, [wildVideoIdx, pdpWildMuted]);
 
   
   // productImages already set from passedProduct above
@@ -782,13 +717,13 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 <SocialProofTicker />
               </div>
 
-              {/* Nutrition keyword chips */}
+              {/* Product highlight chips */}
               <div className="mb-5 flex flex-wrap gap-2">
                 {[
-                  { label: 'Malted & Fortified', bg: '#FFF3E0', color: '#E65100', border: '#FFB74D' },
-                  { label: 'High in Fibre',       bg: '#E8F5E9', color: '#2E7D32', border: '#81C784' },
-                  { label: 'Rich in Iron',         bg: '#FCE4EC', color: '#C62828', border: '#F48FB1' },
-                  { label: 'Rich in Calcium & Protein', bg: '#E3F2FD', color: '#1565C0', border: '#90CAF9' },
+                  { label: '14KT Gold',          bg: '#FFF8E1', color: '#8D6E00', border: '#FFD54F' },
+                  { label: 'Certified Diamonds', bg: '#FCE4EC', color: '#C2185B', border: '#F48FB1' },
+                  { label: 'BIS Hallmarked',     bg: '#F3E5F5', color: '#6A1B9A', border: '#CE93D8' },
+                  { label: 'Lifetime Exchange',  bg: '#E8F5E9', color: '#2E7D32', border: '#81C784' },
                 ].map(({ label, bg, color, border }) => (
                   <span
                     key={label}
@@ -809,10 +744,10 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 ))}
               </div>
 
-              {/* Quantity label */}
+              {/* Metal / stone details */}
               <div className="mb-5">
                 <p className="text-sm text-gray-700 mb-1">
-                  <span className="font-semibold">Quantity</span>&nbsp;&nbsp;300g
+                  <span className="font-semibold">Metal</span>&nbsp;&nbsp;14KT Gold&nbsp;·&nbsp;<span className="font-semibold">Stone</span>&nbsp;&nbsp;Diamond
                 </p>
               </div>
 
@@ -840,25 +775,25 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 </button>
               </div>
 
-              {/* BUY 3 GET 1 FREE promo banner */}
+              {/* Festive making-charges promo banner */}
               <div className="mb-6 rounded-lg px-5 py-4 text-center border border-stone-200" style={{ backgroundColor: '#faf7f2' }}>
                 <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Limited Offer</p>
                 <p className="text-xl font-bold text-gray-900">
-                  Buy 3, Get 1 <span style={{ color: '#c0392b' }}>Free</span>
+                  Up to 100% <span style={{ color: '#c0392b' }}>Off</span> Making Charges
                 </p>
-                <p className="text-xs text-gray-400 mt-1">Automatically applied at checkout</p>
+                <p className="text-xs text-gray-400 mt-1">On diamond jewellery · offer auto-applies in cart</p>
               </div>
 
 
               {/* Accordions */}
               {[
                 {
-                  label: 'PREPARATION DAYS',
-                  content: 'This product is handcrafted and requires 3–5 working days of preparation before dispatch.',
+                  label: 'PRODUCT DETAILS',
+                  content: 'Metal: 14KT Gold · Stone: Certified natural diamonds · BIS hallmarked · Comes with a certificate of authenticity.',
                 },
                 {
                   label: 'RETURN / EXCHANGE POLICY',
-                  content: 'We accept returns and exchanges within 7 days of delivery. The product must be unused and in its original packaging.',
+                  content: '15-day easy returns and lifetime exchange on Mia jewellery, as per the Mia exchange policy.',
                 },
                 {
                   label: 'CANCELLATION POLICY',
@@ -866,7 +801,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                 },
                 {
                   label: 'SHIPPING POLICY',
-                  content: 'Free shipping on all orders. Estimated delivery in 5–7 business days across India.',
+                  content: 'Free insured shipping on all orders. Estimated delivery in 3–7 business days across India.',
                 },
               ].map(({ label, content }) => (
                 <AccordionRow key={label} label={label} content={content} />
@@ -878,310 +813,6 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
       </main>
 
 
-      {false && (() => {
-        const WILD_VIDEOS = SCRAPSHALA_SHOP_VIDEOS;
-        const n = WILD_VIDEOS.length;
-        const idx = wildVideoIdx;
-        const canWildPrev = idx != null && idx > 0;
-        const canWildNext = idx != null && idx < n - 1;
-        const thumbImg = idx != null ? MAMMA_MILLS_PRODUCT_IMAGES[idx % MAMMA_MILLS_PRODUCT_IMAGES.length] : MAMMA_MILLS_PRODUCT_IMAGES[0];
-        const reelLabel = idx != null ? PDP_REEL_LABELS[idx % PDP_REEL_LABELS.length] : '';
-
-        return (
-          <>
-            <div className="w-full border-t border-b border-gray-100/80 bg-white py-7 md:py-8">
-              <div className="w-full px-4 max-w-7xl mx-auto">
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-                  <div>
-                    <h2 className="text-base sm:text-lg font-semibold text-gray-900 tracking-tight">
-                      Shop the Look
-                    </h2>
-                  </div>
-                  <a
-                    href={AJNAA_INSTAGRAM_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-none shrink-0 bg-white text-gray-800 border border-gray-200 shadow-sm hover:bg-white hover:border-[#B99B7B]/40 transition-colors"
-                    style={{ textDecoration: 'none' }}
-                  >
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden>
-                      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.8"/>
-                      <circle cx="12" cy="12" r="4.5" stroke="currentColor" strokeWidth="1.8"/>
-                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
-                    </svg>
-                    @mammamills
-                  </a>
-                </div>
-                <div className="overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none' }}>
-                  <div className="flex gap-3 sm:gap-4 min-w-max">
-                    {WILD_VIDEOS.map((url, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B] focus-visible:ring-offset-2 rounded-none flex flex-col items-center"
-                        onClick={() => {
-                          setPdpWildMuted(false);
-                          setWildVideoIdx(idx);
-                        }}
-                      >
-                        <div className="rounded-[999px] bg-[linear-gradient(135deg,#feda75_0%,#fa7e1e_35%,#d62976_68%,#962fbf_100%)] p-[2.5px] sm:p-[3px]">
-                          <div
-                            className="relative overflow-hidden"
-                            style={{
-                              width: '103px',
-                              height: '175px',
-                              borderRadius: '999px',
-                            }}
-                          >
-                            <video src={url} className="h-full w-full object-cover" autoPlay muted playsInline loop />
-                            <div
-                              className="pointer-events-none absolute inset-0"
-                              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 45%)' }}
-                            />
-                          </div>
-                        </div>
-                        <span className="mt-2 text-[11px] text-gray-600 text-center max-w-[108px] leading-snug line-clamp-2 px-0.5">
-                          {PDP_REEL_LABELS[idx % PDP_REEL_LABELS.length]}
-                        </span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {wildVideoIdx !== null && (
-              <div
-                className="fixed inset-0 z-[999] flex items-stretch md:items-center justify-center md:p-5 bg-gradient-to-b from-stone-100/90 via-stone-200/85 to-stone-400/55 backdrop-blur-2xl"
-                onClick={() => setWildVideoIdx(null)}
-                onWheel={(e) => {
-                  e.preventDefault();
-                  const now = Date.now();
-                  if (now - pdpWildLastWheel.current < 420) return;
-                  pdpWildLastWheel.current = now;
-                  const dy = e.deltaY;
-                  setWildVideoIdx((cur) => {
-                    if (cur == null) return cur;
-                    const next = dy > 0 ? Math.min(cur + 1, n - 1) : Math.max(cur - 1, 0);
-                    return next === cur ? cur : next;
-                  });
-                }}
-                role="presentation"
-              >
-                <div
-                  className="flex w-full max-w-6xl flex-col items-stretch gap-3 md:flex-row md:items-center md:justify-center md:gap-4"
-                  onClick={(e) => e.stopPropagation()}
-                  role="dialog"
-                  aria-modal="true"
-                  aria-label="Mamma Mills reels"
-                >
-                  {/* Desktop: previous preview */}
-                  <div className="hidden w-[148px] shrink-0 flex-col md:flex">
-                    {canWildPrev ? (
-                      <button
-                        type="button"
-                        onClick={() => setWildVideoIdx((i) => (i != null && i > 0 ? i - 1 : i))}
-                        className="group relative w-full overflow-hidden rounded-none bg-stone-900 shadow-lg ring-2 ring-white/50 aspect-[9/16] max-h-[300px]"
-                        aria-label="Previous reel preview"
-                      >
-                        <video
-                          src={WILD_VIDEOS[idx - 1]}
-                          muted
-                          playsInline
-                          loop
-                          preload="metadata"
-                          className="h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-                        />
-                      </button>
-                    ) : (
-                      <div className="flex w-full aspect-[9/16] max-h-[300px] items-center justify-center rounded-none border border-dashed border-stone-300/80 bg-stone-200/50 text-center text-xs font-medium text-stone-500">
-                        First reel
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Main reel (phone-style) */}
-                  <div
-                    className="relative mx-auto w-full max-w-[420px] overflow-hidden shadow-[0_32px_90px_-20px_rgba(0,0,0,0.35)] ring-2 ring-white/25 rounded-none bg-stone-950 h-[100dvh] md:h-[min(88dvh,780px)] md:max-h-[88dvh]"
-                  >
-                    <video
-                      ref={pdpWildVideoRef}
-                      key={`pdp-wild-${idx}`}
-                      src={WILD_VIDEOS[idx]}
-                      className="pointer-events-none relative z-0 h-full w-full object-cover"
-                      autoPlay
-                      loop
-                      playsInline
-                      muted={pdpWildMuted}
-                    />
-
-                    <button
-                      type="button"
-                      disabled={!canWildPrev}
-                      onClick={(e) => { e.stopPropagation(); setWildVideoIdx((i) => (i != null && i > 0 ? i - 1 : i)); }}
-                      className="absolute left-2 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-none bg-white/25 text-white backdrop-blur-md transition-opacity md:hidden disabled:opacity-25"
-                      aria-label="Previous reel"
-                    >
-                      <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                        <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </button>
-                    <button
-                      type="button"
-                      disabled={!canWildNext}
-                      onClick={(e) => { e.stopPropagation(); setWildVideoIdx((i) => (i != null && i < n - 1 ? i + 1 : i)); }}
-                      className="absolute right-2 top-1/2 z-30 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-none bg-white/25 text-white backdrop-blur-md transition-opacity md:hidden disabled:opacity-25"
-                      aria-label="Next reel"
-                    >
-                      <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                        <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </button>
-
-                    <div
-                      className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-4 pt-5 pb-2"
-                      style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.65), transparent)' }}
-                    >
-                      <div className="flex items-center gap-2 min-w-0">
-                        <div className="w-8 h-8 rounded-none overflow-hidden border-2 border-white shrink-0 bg-stone-800">
-                          <img src={thumbImg} alt="" className="w-full h-full object-cover" />
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-white text-sm font-semibold leading-none truncate">Mamma Mills</p>
-                          <p className="text-white/75 text-xs mt-0.5 truncate">
-                            Reel {idx + 1} of {n}
-                          </p>
-                        </div>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={() => setWildVideoIdx(null)}
-                        className="w-8 h-8 rounded-none bg-black/45 flex items-center justify-center text-white shrink-0"
-                        aria-label="Close reels"
-                      >
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
-                          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-                        </svg>
-                      </button>
-                    </div>
-
-                    <div className="absolute left-1/2 -translate-x-1/2 top-4 z-20 flex gap-1">
-                      {WILD_VIDEOS.map((_, i) => (
-                        <button
-                          key={i}
-                          type="button"
-                          onClick={() => setWildVideoIdx(i)}
-                          className="rounded-none transition-all"
-                          style={{
-                            width: i === idx ? '16px' : '6px',
-                            height: '6px',
-                            background: i === idx ? '#fff' : 'rgba(255,255,255,0.45)',
-                          }}
-                          aria-label={`Reel ${i + 1}`}
-                        />
-                      ))}
-                    </div>
-
-                    <div className="absolute right-3 bottom-44 z-20 flex flex-col items-center gap-5">
-                      <button type="button" onClick={() => setPdpWildLiked((l) => !l)} className="flex flex-col items-center gap-1">
-                        <div className={`w-11 h-11 rounded-none flex items-center justify-center ${pdpWildLiked ? 'bg-pink-500' : 'bg-black/40'}`}>
-                          <svg viewBox="0 0 24 24" fill={pdpWildLiked ? 'white' : 'none'} stroke="white" strokeWidth="2" className="w-5 h-5">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                          </svg>
-                        </div>
-                        <span className="text-white text-xs font-medium">{pdpWildLiked ? 'Liked' : 'Like'}</span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const m = !pdpWildMuted;
-                          setPdpWildMuted(m);
-                          if (pdpWildVideoRef.current) pdpWildVideoRef.current.muted = m;
-                        }}
-                        className="flex flex-col items-center gap-1"
-                      >
-                        <div className="w-11 h-11 rounded-none bg-black/40 flex items-center justify-center">
-                          {pdpWildMuted ? (
-                            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="w-5 h-5">
-                              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                              <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
-                            </svg>
-                          ) : (
-                            <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="w-5 h-5">
-                              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                            </svg>
-                          )}
-                        </div>
-                        <span className="text-white text-xs font-medium">{pdpWildMuted ? 'Unmute' : 'Mute'}</span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          navigator.share
-                            ? navigator.share({ title: 'Mamma Mills', text: reelLabel, url: window.location.href })
-                            : navigator.clipboard?.writeText(window.location.href)
-                        }
-                        className="flex flex-col items-center gap-1"
-                      >
-                        <div className="w-11 h-11 rounded-none bg-black/40 flex items-center justify-center">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" className="w-5 h-5">
-                            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
-                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
-                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-                          </svg>
-                        </div>
-                        <span className="text-white text-xs font-medium">Share</span>
-                      </button>
-                    </div>
-
-                    <div
-                      className="absolute bottom-0 left-0 right-0 z-20 px-4 pb-6 pt-16"
-                      style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.92) 55%, transparent)' }}
-                    >
-                      <p className="text-white text-sm font-medium mb-2 line-clamp-2">{reelLabel}</p>
-                      <a
-                        href={AJNAA_INSTAGRAM_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex w-full items-center justify-center py-3 rounded-none text-sm font-bold text-white bg-[#B99B7B] hover:opacity-95 transition-opacity"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        Follow @mammamills
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Desktop: next preview */}
-                  <div className="hidden w-[148px] shrink-0 flex-col md:flex">
-                    {canWildNext ? (
-                      <button
-                        type="button"
-                        onClick={() => setWildVideoIdx((i) => (i != null && i < n - 1 ? i + 1 : i))}
-                        className="group relative aspect-[9/16] max-h-[300px] w-full overflow-hidden rounded-none bg-stone-900 shadow-lg ring-2 ring-white/50"
-                        aria-label="Next reel preview"
-                      >
-                        <video
-                          src={WILD_VIDEOS[idx + 1]}
-                          muted
-                          playsInline
-                          loop
-                          preload="metadata"
-                          className="h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-100"
-                        />
-                      </button>
-                    ) : (
-                      <div className="flex aspect-[9/16] max-h-[300px] w-full items-center justify-center rounded-none border border-dashed border-stone-300/80 bg-stone-200/50 text-center text-xs font-medium text-stone-500">
-                        Last reel
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
-          </>
-        );
-      })()}
 
       {/* Best Sellers Section */}
       <section className="w-full py-12 md:py-16 bg-white border-t border-gray-100">
@@ -1343,7 +974,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       href={AJNAA_INSTAGRAM_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label="Open @mammamills on Instagram"
+                      aria-label="Open @miabytanishq on Instagram"
                       className="flex items-center gap-3.5 rounded-none border border-stone-200/70 bg-white px-3.5 py-3 transition-colors hover:bg-stone-50/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#B99B7B]/35 focus-visible:ring-offset-2"
                       style={{ textDecoration: 'none' }}
                     >
@@ -1372,7 +1003,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </span>
                       <div className="min-w-0 flex-1 text-left">
                         <div className="flex flex-col gap-1.5">
-                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@mammamills</p>
+                          <p className="text-[13px] font-semibold leading-snug text-stone-900">@miabytanishq</p>
                           <p className="text-[11px] leading-snug text-stone-600">
                             <span className="font-semibold tabular-nums text-stone-800">{AJNAA_INSTAGRAM_FOLLOWERS_LABEL}</span>
                             {' '}
@@ -1401,12 +1032,12 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
 
                 <div className="px-6 pb-2 pt-4">
                   <h4 className="mb-2.5 font-serif text-lg font-normal tracking-tight text-stone-900 md:text-xl">
-                    What Mamma Mills customers are saying
+                    What Mia customers are saying
                   </h4>
                   <p className="text-[14px] leading-[1.65] text-stone-600">
                     {isAISummaryExpanded ? (
                       <>
-                        Parents love Mamma Mills for the clean, organic ingredients and how easy the porridge is to prepare. Reviews highlight the soft texture that babies take to quickly, the dairy-free and vegan formulation, and the trustworthy sourcing. Many mention it as a staple from 6 months onward, and repeat purchases are very common. Several parents note their babies prefer this over other brands.{' '}
+                        Customers love Mia for its lightweight, wearable designs and the genuine sparkle of certified diamonds. Reviews highlight the fine finishing, the comfortable fit for all-day wear, and how premium the pieces look in person. Many buy Mia as a gift for birthdays, anniversaries and festivals, and repeat purchases are common thanks to the lifetime exchange policy.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(false)}
@@ -1417,7 +1048,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
                       </>
                     ) : (
                       <>
-                        Parents praise Mamma Mills for organic ingredients, gentle texture, and easy preparation — a wholesome first food babies love.{' '}
+                        Customers praise Mia for everyday-wearable gold & diamond designs, fine finishing and great gifting value.{' '}
                         <button
                           type="button"
                           onClick={() => setIsAISummaryExpanded(true)}
@@ -1758,7 +1389,7 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
           background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
           boxShadow: '0 4px 15px rgba(188, 24, 136, 0.4)'
         }}
-        onClick={() => setShowInstagramModal(true)}
+        onClick={() => window.open(AJNAA_INSTAGRAM_URL, '_blank', 'noopener,noreferrer')}
         aria-label="See Our Instagram"
       >
         <svg className="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -1840,37 +1471,6 @@ const ShopifyProductPage = ({ product: passedProduct, onHomeClick }) => {
         </div>
       )}
 
-      {/* Video Modal */}
-      {selectedVideo && (
-        <div 
-          className="video-modal-overlay"
-          onClick={() => setSelectedVideo(null)}
-        >
-          <div 
-            className="video-modal-container"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button 
-              className="video-modal-close"
-              onClick={() => setSelectedVideo(null)}
-              aria-label="Close video"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 6L6 18M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-            </button>
-            <video
-              src={selectedVideo}
-              className="video-modal-player"
-              controls
-              autoPlay
-              playsInline
-            >
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      )}
 
       {/* You May Also Like Section */}
       <section className="w-full py-12 md:py-16 bg-white">
